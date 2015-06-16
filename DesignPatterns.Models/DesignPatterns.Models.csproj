@@ -37,6 +37,21 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IArm.cs" />
+    <Compile Include="IMobilitySystem.cs" />
+    <Compile Include="IMotor.cs" />
+    <Compile Include="Implementations\PincerArm.cs" />
+    <Compile Include="Implementations\MobilitySystem.cs" />
+    <Compile Include="Implementations\Roboto.cs" />
+    <Compile Include="IPowerSource.cs" />
+    <Compile Include="IThreeDimensionalMovementComponent.cs" />
+    <Compile Include="ITwoDimensionalMovementComponent.cs" />
+    <Compile Include="IWeaponSystem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
