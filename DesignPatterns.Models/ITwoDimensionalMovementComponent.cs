@@ -6,5 +6,6 @@
 		void MoveBackward();
 		void MoveLeft();
 		void MoveRight();
+		Coordinates CurrentCoordinates { get; }
 	}
 }

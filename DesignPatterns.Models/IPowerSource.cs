@@ -2,7 +2,9 @@
 {
 	public interface IPowerSource
 	{
-		void ProvidePower(int watts);
-		void Charge(int watts);
+		bool ProvidePower(int watts);
+		bool Charge(int watts);
+		int CurrentCharge { get; }
+		int Capacity { get; }
 	}
 }
