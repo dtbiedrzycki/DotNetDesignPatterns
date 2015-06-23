@@ -39,10 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builder\Implementations\SimpleRobotoBuilder.cs" />
+    <Compile Include="Builder\IRobotoBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Implementations\" />
+    <ProjectReference Include="..\DesignPatterns.Models\DesignPatterns.Models.csproj">
+      <Project>{44EE8EBE-5930-497A-9CCF-3400FD75EFD8}</Project>
+      <Name>DesignPatterns.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

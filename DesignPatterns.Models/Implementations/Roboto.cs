@@ -1,11 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace DesignPatterns.Implementations
 {
-	public class Roboto
+	public class Roboto : ICloneable
 	{
-		public IEnumerable<IArm> Arms { get; set; }
-		public IEnumerable<IMobilitySystem> MobilitySystems { get; set; }
-		public IEnumerable<IWeaponSystem> WeaponSystems { get; set; }
+		public IPowerSource PowerSource { get; set; }
+		public List<IArm> Arms { get; set; }
+		public IMobilitySystem MobilitySystem { get; set; }
+
+		public object Clone()
+		{
+			return this.MemberwiseClone();
+		}
 	}
 }
