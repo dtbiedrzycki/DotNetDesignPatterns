@@ -4,9 +4,9 @@ namespace BuilderPatterns.Builder
 {
 	public interface IRobotoBuilder
 	{
-		void BuildNewRoboto();
-		void BuildArm();
-		void BuildMobilitySystem();
+		void CreateNewRoboto();
+		void AddArm();
+		void AddMobilitySystem();
 		Roboto GetRoboto();
 	}
 }

@@ -8,7 +8,7 @@ namespace BuilderPatterns.Builder.Implementations
 	{
 		private Roboto _roboto; 
 
-		public void BuildNewRoboto()
+		public void CreateNewRoboto()
 		{
 			_roboto = new Roboto()
 			{
@@ -16,7 +16,7 @@ namespace BuilderPatterns.Builder.Implementations
 			};	
 		}
 
-		public void BuildArm()
+		public void AddArm()
 		{
 			if (_roboto != null)
 			{
@@ -34,7 +34,7 @@ namespace BuilderPatterns.Builder.Implementations
 			}
 		}
 
-		public void BuildMobilitySystem()
+		public void AddMobilitySystem()
 		{
 			if (_roboto != null)
 			{

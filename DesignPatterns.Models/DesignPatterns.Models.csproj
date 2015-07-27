@@ -42,6 +42,7 @@
     <Compile Include="IArm.cs" />
     <Compile Include="IMobilitySystem.cs" />
     <Compile Include="IMotor.cs" />
+    <Compile Include="Implementations\BipedalMobilitySystem.cs" />
     <Compile Include="Implementations\SimpleMotor.cs" />
     <Compile Include="Implementations\SimpleArm.cs" />
     <Compile Include="Implementations\Roboto.cs" />
