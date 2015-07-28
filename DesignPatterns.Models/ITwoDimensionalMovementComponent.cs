@@ -1,6 +1,8 @@
-﻿namespace DesignPatterns
+﻿using System;
+
+namespace DesignPatterns
 {
-	public interface ITwoDimensionalMovementComponent
+	public interface ITwoDimensionalMovementComponent : ICloneable
 	{
 		void MoveForward();
 		void MoveBackward();

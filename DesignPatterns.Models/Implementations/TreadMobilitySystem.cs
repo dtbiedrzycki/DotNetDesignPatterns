@@ -48,5 +48,10 @@
 				_coordinates.X++;
 			}
 		}
+
+		public object Clone()
+		{
+			return this.MemberwiseClone();
+		}
 	}
 }

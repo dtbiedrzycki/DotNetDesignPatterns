@@ -78,5 +78,10 @@ namespace DesignPatterns.Implementations
 			throw new System.NotImplementedException();
 		}
 
+		public object Clone()
+		{
+			return this.MemberwiseClone();
+		}
+
 	}
 }
