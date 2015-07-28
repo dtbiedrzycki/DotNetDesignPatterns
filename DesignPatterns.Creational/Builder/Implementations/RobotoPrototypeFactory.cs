@@ -4,8 +4,8 @@ namespace BuilderPatterns.Builder.Implementations
 {
 	public class RobotoPrototypeFactory : IRobotoFactory
 	{
-		private readonly Roboto _rollingRoboto;
 		private readonly Roboto _humanoidRoboto;
+		private readonly Roboto _rollingRoboto;
 
 		public RobotoPrototypeFactory(Roboto rollingRoboto, Roboto humanoidRoboto)
 		{

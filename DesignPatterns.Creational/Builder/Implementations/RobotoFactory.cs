@@ -6,26 +6,26 @@ namespace BuilderPatterns.Builder.Implementations
 {
 	public class RobotoFactory : IRobotoFactory
 	{
-		public DesignPatterns.Implementations.Roboto CreateRollingRoboto()
+		public Roboto CreateRollingRoboto()
 		{
 			var powerSource = new SimplePowerSource();
-			var roboto = new Roboto()
+			var roboto = new Roboto
 			{
-				PowerSource =  powerSource,
-				Arms = new List<IArm>() { new SimpleArm(new SimpleMotor(powerSource)) },
+				PowerSource = powerSource,
+				Arms = new List<IArm> {new SimpleArm(new SimpleMotor(powerSource))},
 				MobilitySystem = new TreadMobilitySystem(new SimpleMotor(powerSource))
 			};
 
 			return roboto;
 		}
 
-		public DesignPatterns.Implementations.Roboto CreateHumanoidRoboto()
+		public Roboto CreateHumanoidRoboto()
 		{
 			var powerSource = new SimplePowerSource();
-			var roboto = new Roboto()
+			var roboto = new Roboto
 			{
-				PowerSource =  powerSource,
-				Arms = new List<IArm>()
+				PowerSource = powerSource,
+				Arms = new List<IArm>
 				{
 					new SimpleArm(new SimpleMotor(powerSource)),
 					new SimpleArm(new SimpleMotor(powerSource))
@@ -33,7 +33,8 @@ namespace BuilderPatterns.Builder.Implementations
 				MobilitySystem = new BipedalMobilitySystem(new SimpleMotor(powerSource))
 			};
 
-			return roboto;;
+			return roboto;
+			;
 		}
 	}
 }

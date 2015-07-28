@@ -6,14 +6,14 @@ namespace BuilderPatterns.Builder.Implementations
 {
 	public class RobotoBuilder : IRobotoBuilder
 	{
-		private Roboto _roboto; 
+		private Roboto _roboto;
 
 		public void CreateNewRoboto()
 		{
-			_roboto = new Roboto()
+			_roboto = new Roboto
 			{
 				PowerSource = new SimplePowerSource()
-			};	
+			};
 		}
 
 		public void AddArm()
@@ -25,7 +25,7 @@ namespace BuilderPatterns.Builder.Implementations
 
 				if (_roboto.Arms == null)
 				{
-					_roboto.Arms = new List<IArm>() { arm };
+					_roboto.Arms = new List<IArm> {arm};
 				}
 				else
 				{
@@ -47,7 +47,7 @@ namespace BuilderPatterns.Builder.Implementations
 
 		public Roboto GetRoboto()
 		{
-			return _roboto == null ? null : (Roboto)_roboto.Clone();
+			return _roboto == null ? null : (Roboto) _roboto.Clone();
 		}
 	}
 }

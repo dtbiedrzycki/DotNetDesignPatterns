@@ -2,11 +2,10 @@
 {
 	public class SimpleMotor : IMotor
 	{
-		private readonly IPowerSource _powerSource;
-		private bool _isOn = false;
-
 		private const int POWER_ON_WATTS = 2;
 		private const int ACTIVATE_WATTS = 10;
+		private readonly IPowerSource _powerSource;
+		private bool _isOn;
 
 		public SimpleMotor(IPowerSource powerSource)
 		{

@@ -11,10 +11,10 @@ namespace BuilderPatterns.Builder.Implementations
 			() =>
 			{
 				var powerSource = new UnlimitedPowerSource();
-				var roboto = new AlphaRobotoSingleton()
+				var roboto = new AlphaRobotoSingleton
 				{
-					PowerSource =  powerSource,
-					Arms = new List<IArm>()
+					PowerSource = powerSource,
+					Arms = new List<IArm>
 					{
 						new SimpleArm(new SimpleMotor(powerSource)),
 						new SimpleArm(new SimpleMotor(powerSource))

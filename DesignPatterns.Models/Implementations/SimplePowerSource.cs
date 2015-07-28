@@ -3,15 +3,19 @@
 	public class SimplePowerSource : IPowerSource
 	{
 		private const int MAX_CAPACITY = 100;
-		private int _currentCharge = 0;
+
+		public SimplePowerSource()
+		{
+			CurrentCharge = 0;
+		}
 
 		public bool ProvidePower(int watts)
 		{
-			_currentCharge -= watts;
+			CurrentCharge -= watts;
 
-			if (_currentCharge <= 0)
+			if (CurrentCharge <= 0)
 			{
-				_currentCharge = 0;
+				CurrentCharge = 0;
 				return false;
 			}
 
@@ -25,19 +29,16 @@
 				return false;
 			}
 
-			_currentCharge += watts;
-			if (_currentCharge > MAX_CAPACITY)
+			CurrentCharge += watts;
+			if (CurrentCharge > MAX_CAPACITY)
 			{
-				_currentCharge = MAX_CAPACITY;
+				CurrentCharge = MAX_CAPACITY;
 			}
 
 			return true;
 		}
 
-		public int CurrentCharge
-		{
-			get { return _currentCharge; }
-		}
+		public int CurrentCharge { get; private set; }
 
 		public int Capacity
 		{

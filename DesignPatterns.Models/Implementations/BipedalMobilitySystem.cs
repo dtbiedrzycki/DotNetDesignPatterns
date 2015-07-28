@@ -2,14 +2,14 @@
 {
 	public class BipedalMobilitySystem : IMobilitySystem
 	{
-		private readonly IMotor _motor;
-		private readonly Coordinates _coordinates;
 		private const int TREAD_WATTS = 20;
-		
+		private readonly Coordinates _coordinates;
+		private readonly IMotor _motor;
+
 		public BipedalMobilitySystem(IMotor motor)
 		{
 			_motor = motor;
-			_coordinates = new Coordinates() { X = 0, Y = 0, Z = 0 };			
+			_coordinates = new Coordinates {X = 0, Y = 0, Z = 0};
 		}
 
 		public Coordinates CurrentCoordinates
@@ -51,7 +51,7 @@
 
 		public object Clone()
 		{
-			return this.MemberwiseClone();
+			return MemberwiseClone();
 		}
 	}
 }

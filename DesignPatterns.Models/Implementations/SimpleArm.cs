@@ -4,14 +4,13 @@ namespace DesignPatterns.Implementations
 {
 	public class SimpleArm : IArm
 	{
+		private const int MAX_REACH = 5;
 		private readonly Coordinates _coordinates;
 		private readonly IMotor _motor;
 
-		private const int MAX_REACH = 5;
-
 		public SimpleArm(IMotor motor)
 		{
-			_coordinates = new Coordinates() { X = 0, Y = 0, Z = 0 };
+			_coordinates = new Coordinates {X = 0, Y = 0, Z = 0};
 			_motor = motor;
 		}
 
@@ -70,18 +69,17 @@ namespace DesignPatterns.Implementations
 
 		public void Open()
 		{
-			throw new System.NotImplementedException();
+			throw new NotImplementedException();
 		}
 
 		public void Close()
 		{
-			throw new System.NotImplementedException();
+			throw new NotImplementedException();
 		}
 
 		public object Clone()
 		{
-			return this.MemberwiseClone();
+			return MemberwiseClone();
 		}
-
 	}
 }

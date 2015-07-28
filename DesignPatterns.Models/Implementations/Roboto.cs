@@ -11,7 +11,7 @@ namespace DesignPatterns.Implementations
 
 		public object Clone()
 		{
-			return this.MemberwiseClone();
+			return MemberwiseClone();
 		}
 	}
 }

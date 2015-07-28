@@ -6,10 +6,9 @@ namespace BuilderPatterns.Builder.Implementations
 {
 	public class RobotoPrototypeBuilder : IRobotoBuilder
 	{
-		private readonly Roboto _baseRoboto;
 		private readonly IArm _arm;
+		private readonly Roboto _baseRoboto;
 		private readonly IMobilitySystem _mobilitySystem;
-
 		private Roboto _currentRoboto;
 
 		public RobotoPrototypeBuilder(Roboto baseRoboto, IArm arm, IMobilitySystem mobilitySystem)
@@ -19,7 +18,7 @@ namespace BuilderPatterns.Builder.Implementations
 			_mobilitySystem = mobilitySystem;
 		}
 
-		public RobotoPrototypeBuilder(IArm arm, IMobilitySystem mobilitySystem) 
+		public RobotoPrototypeBuilder(IArm arm, IMobilitySystem mobilitySystem)
 			: this(new Roboto(), arm, mobilitySystem)
 		{
 		}
@@ -35,7 +34,7 @@ namespace BuilderPatterns.Builder.Implementations
 			{
 				if (_currentRoboto.Arms == null)
 				{
-					_currentRoboto.Arms = new List<IArm>() {_arm.Clone() as IArm};
+					_currentRoboto.Arms = new List<IArm> {_arm.Clone() as IArm};
 				}
 				else
 				{
