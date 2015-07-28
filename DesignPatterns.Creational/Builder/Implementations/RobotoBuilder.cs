@@ -4,7 +4,7 @@ using DesignPatterns.Implementations;
 
 namespace BuilderPatterns.Builder.Implementations
 {
-	public class SimpleRobotoBuilder : IRobotoBuilder
+	public class RobotoBuilder : IRobotoBuilder
 	{
 		private Roboto _roboto; 
 

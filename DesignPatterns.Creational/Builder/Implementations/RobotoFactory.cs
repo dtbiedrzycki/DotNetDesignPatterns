@@ -4,7 +4,7 @@ using DesignPatterns.Implementations;
 
 namespace BuilderPatterns.Builder.Implementations
 {
-	public class SimpleRobotoFactory : IRobotoFactory
+	public class RobotoFactory : IRobotoFactory
 	{
 		public DesignPatterns.Implementations.Roboto CreateRollingRoboto()
 		{
