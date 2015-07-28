@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Builder\Implementations\AlphaRobotoSingleton.cs" />
+    <Compile Include="Builder\Implementations\RobotoPrototypeFactory.cs" />
     <Compile Include="Builder\Implementations\SimpleRobotoBuilder.cs" />
     <Compile Include="Builder\Implementations\SimpleRobotoFactory.cs" />
     <Compile Include="Builder\IRobotoBuilder.cs" />
