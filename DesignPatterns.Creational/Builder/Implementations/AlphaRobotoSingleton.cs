@@ -25,7 +25,7 @@ namespace BuilderPatterns.Builder.Implementations
 				return roboto;
 			});
 
-		public AlphaRobotoSingleton Instance()
+		public static AlphaRobotoSingleton Instance()
 		{
 			return _instance.Value;
 		}
