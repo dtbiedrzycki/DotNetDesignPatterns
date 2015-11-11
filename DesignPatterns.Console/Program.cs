@@ -1,4 +1,5 @@
 ﻿using System;
+using BuilderPatterns.Builder;
 using Castle.Windsor;
 using DesignPatternConsole.GetRobotos;
 using DesignPatternConsole.IoC;
@@ -25,7 +26,7 @@ namespace DesignPatternConsole
 			IWriter writer = container.Resolve<IWriter>();
 			writer.WriteLine("===== WELCOME TO ROBOTO-CON 2000! =====");
 			writer.WriteLine("Please select a roboto creation method");
-			writer.WriteLine("1: Singleton\t2: Factory");
+			writer.WriteLine("1: Singleton\t2: Factory\t3: Builder\t4: Prototype");
 
 			IReader reader = container.Resolve<IReader>();
 			string input = reader.ReadLine();
@@ -39,6 +40,23 @@ namespace DesignPatternConsole
 
 				case 2:
 					_getRobotoMethod = container.Resolve<IFactoryGetRobotoMethod>();
+					break;
+
+				case 3:
+					_getRobotoMethod = container.Resolve<IBuilderGetRobotMethod>();
+					break;
+
+				case 4:
+					// sciens has gone too far!
+					IRobotoFactory backwardsFactory = container.Resolve<IRobotoFactory>();
+					Roboto shouldaBeenaHumanoid = backwardsFactory.CreateRollingRoboto();
+					Roboto shouldaBeenaRoller = backwardsFactory.CreateHumanoidRoboto();
+
+					_getRobotoMethod = container.Resolve<IPrototypeGetRobotoMethod>(new
+					{
+						humanoidTemplate = shouldaBeenaHumanoid,
+						rollingTemplate = shouldaBeenaRoller
+					});
 					break;
 
 				default:

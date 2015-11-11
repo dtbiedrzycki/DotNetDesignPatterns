@@ -16,6 +16,7 @@ namespace DesignPatternConsole.IoC
 		{
 			// Creational
 			container.Register(Component.For<IRobotoFactory>().ImplementedBy<RobotoFactory>().LifestyleTransient());
+			container.Register(Component.For<IRobotoBuilder>().ImplementedBy<RobotoBuilder>().LifestyleTransient());
 
 			// Utilities
 			container.Register(Component.For<IWriter>().ImplementedBy<ConsoleWriter>().LifestyleSingleton());
@@ -24,6 +25,14 @@ namespace DesignPatternConsole.IoC
 			// GetRobotos
 			container.Register(Component.For<IFactoryGetRobotoMethod>()
 										.ImplementedBy<FactoryGetRobotoMethod>()
+										.DynamicParameters((kernel, parameters) => parameters["dateTime"] = System.DateTime.Now)
+										.LifestyleTransient());
+			container.Register(Component.For<IBuilderGetRobotMethod>()
+										.ImplementedBy<BuilderGetRobotoMethod>()
+										.DynamicParameters((kernel, parameters) => parameters["dateTime"] = System.DateTime.Now)
+										.LifestyleTransient());
+			container.Register(Component.For<IPrototypeGetRobotoMethod>()
+										.ImplementedBy<PrototypeGetRobotoMethod>()
 										.DynamicParameters((kernel, parameters) => parameters["dateTime"] = System.DateTime.Now)
 										.LifestyleTransient());
 

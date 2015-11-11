@@ -49,8 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GetRobotos\IBuilderGetRobotMethod.cs" />
+    <Compile Include="GetRobotos\Implementations\BuilderGetRobotoMethod.cs" />
     <Compile Include="GetRobotos\Implementations\FactoryGetRobotoMethod.cs" />
     <Compile Include="GetRobotos\IFactoryGetRobotoMethod.cs" />
+    <Compile Include="GetRobotos\Implementations\PrototypeGetRobotoMethod.cs" />
+    <Compile Include="GetRobotos\IPrototypeGetRobotoMethod.cs" />
     <Compile Include="GetRobotos\ISingletonGetRobotoMethod.cs" />
     <Compile Include="GetRobotos\Implementations\SingletonGetRobotoMethod.cs" />
     <Compile Include="IGetRobotoMethod.cs" />

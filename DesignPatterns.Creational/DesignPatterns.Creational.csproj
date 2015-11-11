@@ -41,7 +41,7 @@
   <ItemGroup>
     <Compile Include="Builder\Implementations\AlphaRobotoSingleton.cs" />
     <Compile Include="Builder\Implementations\RobotoPrototypeBuilder.cs" />
-    <Compile Include="Builder\Implementations\RobotoPrototypeFactory.cs" />
+    <Compile Include="Builder\Implementations\RobotoPrototype.cs" />
     <Compile Include="Builder\Implementations\RobotoBuilder.cs" />
     <Compile Include="Builder\Implementations\RobotoFactory.cs" />
     <Compile Include="Builder\IRobotoBuilder.cs" />

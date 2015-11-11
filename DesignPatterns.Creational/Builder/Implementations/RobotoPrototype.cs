@@ -2,12 +2,12 @@
 
 namespace BuilderPatterns.Builder.Implementations
 {
-	public class RobotoPrototypeFactory : IRobotoFactory
+	public class RobotoPrototype : IRobotoFactory
 	{
 		private readonly Roboto _humanoidRoboto;
 		private readonly Roboto _rollingRoboto;
 
-		public RobotoPrototypeFactory(Roboto rollingRoboto, Roboto humanoidRoboto)
+		public RobotoPrototype(Roboto rollingRoboto, Roboto humanoidRoboto)
 		{
 			_rollingRoboto = rollingRoboto;
 			_humanoidRoboto = humanoidRoboto;
