@@ -1,7 +1,10 @@
-﻿namespace DesignPatternConsole
+﻿using System.Collections.Generic;
+using DesignPatterns.Implementations;
+
+namespace DesignPatternConsole
 {
 	internal interface IRobotoProgram
 	{
-		void Execute();
+		void Execute(IEnumerable<Roboto> robotos);
 	}
 }

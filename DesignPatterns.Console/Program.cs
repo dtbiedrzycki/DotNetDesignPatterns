@@ -1,5 +1,4 @@
 ﻿using System;
-using BuilderPatterns.Builder;
 using Castle.Windsor;
 using DesignPatternConsole.GetRobotos;
 using DesignPatternConsole.IoC;
@@ -47,16 +46,7 @@ namespace DesignPatternConsole
 					break;
 
 				case 4:
-					// sciens has gone too far!
-					IRobotoFactory backwardsFactory = container.Resolve<IRobotoFactory>();
-					Roboto shouldaBeenaHumanoid = backwardsFactory.CreateRollingRoboto();
-					Roboto shouldaBeenaRoller = backwardsFactory.CreateHumanoidRoboto();
-
-					_getRobotoMethod = container.Resolve<IPrototypeGetRobotoMethod>(new
-					{
-						humanoidTemplate = shouldaBeenaHumanoid,
-						rollingTemplate = shouldaBeenaRoller
-					});
+					_getRobotoMethod = container.Resolve<IPrototypeGetRobotoMethod>();
 					break;
 
 				default:
@@ -66,9 +56,9 @@ namespace DesignPatternConsole
 			Roboto roboto = _getRobotoMethod.GetRoboto();
 
 			// TODO: allow user to select program
-			IRobotoProgram robotoProgram = container.Resolve<IRobotoProgram>(new {roboto = roboto});
+			IRobotoProgram robotoProgram = container.Resolve<IRobotoProgram>();
 
-			robotoProgram.Execute();
+			robotoProgram.Execute(new [] { roboto } );
 		}
 	}
 }

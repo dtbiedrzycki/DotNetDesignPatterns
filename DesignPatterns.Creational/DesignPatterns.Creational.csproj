@@ -46,6 +46,7 @@
     <Compile Include="Builder\Implementations\RobotoFactory.cs" />
     <Compile Include="Builder\IRobotoBuilder.cs" />
     <Compile Include="Builder\IRobotoFactory.cs" />
+    <Compile Include="Builder\IRobotoPrototype.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
