@@ -5,6 +5,9 @@ using DesignPatterns.Implementations;
 
 namespace BuilderPatterns.Builder.Implementations
 {
+	/// <summary>
+	/// A creational pattern in which only a single instance can exist
+	/// </summary>
 	public class AlphaRobotoSingleton : Roboto
 	{
 		private static readonly Lazy<AlphaRobotoSingleton> _instance = new Lazy<AlphaRobotoSingleton>(

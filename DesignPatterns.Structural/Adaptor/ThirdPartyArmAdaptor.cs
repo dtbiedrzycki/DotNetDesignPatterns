@@ -2,6 +2,9 @@
 
 namespace DesignPatterns.Structural.Adaptor
 {
+	/// <summary>
+	/// A structural pattern that matches interfaces of different classes
+	/// </summary>
 	public class ThirdPartyArmAdaptor : IMobilitySystem
 	{
 		private readonly IThirdPartyMobilitySystem _thirdPartyMobilitySystem;
