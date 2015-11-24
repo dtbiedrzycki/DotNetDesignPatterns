@@ -1,11 +1,12 @@
-﻿using BuilderPatterns.Builder;
-using BuilderPatterns.Builder.Implementations;
+﻿using BuilderPatterns;
+using BuilderPatterns.Implementations;
 using Castle.MicroKernel.Registration;
-using DesignPatternConsole.GetRobotos;
-using DesignPatternConsole.GetRobotos.Implementations;
-using DesignPatternConsole.Programs;
-using DesignPatternConsole.Utilities;
-using DesignPatternConsole.Utilities.Implementations;
+using DesignPatternConsole.Creational;
+using DesignPatternConsole.Creational.Implementations;
+using DesignPatternConsole.Structural;
+using DesignPatterns;
+using DesignPatterns.Utilities;
+using DesignPatterns.Utilities.Implementations;
 
 namespace DesignPatternConsole.IoC
 {
@@ -39,7 +40,7 @@ namespace DesignPatternConsole.IoC
 			container.Register(Component.For<ISingletonGetRobotoMethod>().ImplementedBy<SingletonGetRobotoMethod>().LifestyleTransient());
 
 			// Programs
-			container.Register(Component.For<IRobotoProgram>().ImplementedBy<GetStatusProgram>().LifestyleTransient());
+			container.Register(Component.For<IRobotoProgram>().ImplementedBy<DecoratorProgram>().LifestyleTransient());
 		}
 	}
 }

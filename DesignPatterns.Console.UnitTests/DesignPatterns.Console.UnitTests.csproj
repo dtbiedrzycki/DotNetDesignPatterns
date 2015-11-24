@@ -79,6 +79,14 @@
       <Project>{44ee8ebe-5930-497a-9ccf-3400fd75efd8}</Project>
       <Name>DesignPatterns.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DesignPatterns.Structural\DesignPatterns.Structural.csproj">
+      <Project>{2e92f680-07eb-4a0a-af70-4eea51a83918}</Project>
+      <Name>DesignPatterns.Structural</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DesignPatterns.Utilities\DesignPatterns.Utilities.csproj">
+      <Project>{db96f3fa-de76-406c-957a-427dd113bb15}</Project>
+      <Name>DesignPatterns.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

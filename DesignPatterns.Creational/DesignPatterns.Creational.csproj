@@ -39,14 +39,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Builder\Implementations\AlphaRobotoSingleton.cs" />
-    <Compile Include="Builder\Implementations\RobotoPrototypeBuilder.cs" />
-    <Compile Include="Builder\Implementations\RobotoPrototype.cs" />
-    <Compile Include="Builder\Implementations\RobotoBuilder.cs" />
-    <Compile Include="Builder\Implementations\RobotoFactory.cs" />
-    <Compile Include="Builder\IRobotoBuilder.cs" />
-    <Compile Include="Builder\IRobotoFactory.cs" />
-    <Compile Include="Builder\IRobotoPrototype.cs" />
+    <Compile Include="Implementations\AlphaRobotoSingleton.cs" />
+    <Compile Include="Implementations\RobotoPrototypeBuilder.cs" />
+    <Compile Include="Implementations\RobotoPrototype.cs" />
+    <Compile Include="Implementations\RobotoBuilder.cs" />
+    <Compile Include="Implementations\RobotoFactory.cs" />
+    <Compile Include="IRobotoBuilder.cs" />
+    <Compile Include="IRobotoFactory.cs" />
+    <Compile Include="IRobotoPrototype.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

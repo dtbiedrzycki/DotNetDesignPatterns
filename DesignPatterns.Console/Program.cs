@@ -1,9 +1,10 @@
 ﻿using System;
 using Castle.Windsor;
-using DesignPatternConsole.GetRobotos;
+using DesignPatternConsole.Creational;
 using DesignPatternConsole.IoC;
-using DesignPatternConsole.Utilities;
+using DesignPatterns;
 using DesignPatterns.Implementations;
+using DesignPatterns.Utilities;
 
 namespace DesignPatternConsole
 {
@@ -21,7 +22,7 @@ namespace DesignPatternConsole
 
 		internal static void Execute(IWindsorContainer container)
 		{
-			// Get user input
+			// Get user input for creation method
 			IWriter writer = container.Resolve<IWriter>();
 			writer.WriteLine("===== WELCOME TO ROBOTO-CON 2000! =====");
 			writer.WriteLine("Please select a roboto creation method");
@@ -55,8 +56,24 @@ namespace DesignPatternConsole
 
 			Roboto roboto = _getRobotoMethod.GetRoboto();
 
-			// TODO: allow user to select program
-			IRobotoProgram robotoProgram = container.Resolve<IRobotoProgram>();
+			// Get user input for program selection
+			writer.WriteLine("Please select a program to run");
+			writer.WriteLine("1: DecoratorGetStatus");
+
+			input = reader.ReadLine();
+			choice = Convert.ToInt32(input);
+
+			IRobotoProgram robotoProgram;
+
+			switch (choice)
+			{
+				case 1:
+					robotoProgram = container.Resolve<IRobotoProgram>();
+					break;
+
+				default:
+					throw new Exception("Invalid input...game over.");
+			}
 
 			robotoProgram.Execute(new [] { roboto } );
 		}

@@ -49,24 +49,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GetRobotos\IBuilderGetRobotMethod.cs" />
-    <Compile Include="GetRobotos\Implementations\BuilderGetRobotoMethod.cs" />
-    <Compile Include="GetRobotos\Implementations\FactoryGetRobotoMethod.cs" />
-    <Compile Include="GetRobotos\IFactoryGetRobotoMethod.cs" />
-    <Compile Include="GetRobotos\Implementations\PrototypeGetRobotoMethod.cs" />
-    <Compile Include="GetRobotos\IPrototypeGetRobotoMethod.cs" />
-    <Compile Include="GetRobotos\ISingletonGetRobotoMethod.cs" />
-    <Compile Include="GetRobotos\Implementations\SingletonGetRobotoMethod.cs" />
+    <Compile Include="Creational\IBuilderGetRobotMethod.cs" />
+    <Compile Include="Creational\Implementations\BuilderGetRobotoMethod.cs" />
+    <Compile Include="Creational\Implementations\FactoryGetRobotoMethod.cs" />
+    <Compile Include="Creational\IFactoryGetRobotoMethod.cs" />
+    <Compile Include="Creational\Implementations\PrototypeGetRobotoMethod.cs" />
+    <Compile Include="Creational\IPrototypeGetRobotoMethod.cs" />
+    <Compile Include="Creational\ISingletonGetRobotoMethod.cs" />
+    <Compile Include="Creational\Implementations\SingletonGetRobotoMethod.cs" />
     <Compile Include="IGetRobotoMethod.cs" />
     <Compile Include="IoC\WindsorInstaller.cs" />
-    <Compile Include="Programs\GetStatusProgram.cs" />
-    <Compile Include="IRobotoProgram.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilities\Implementations\ConsoleReader.cs" />
-    <Compile Include="Utilities\Implementations\ConsoleWriter.cs" />
-    <Compile Include="Utilities\IReader.cs" />
-    <Compile Include="Utilities\IWriter.cs" />
+    <Compile Include="Structural\DecoratorProgram.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -84,6 +79,10 @@
     <ProjectReference Include="..\DesignPatterns.Structural\DesignPatterns.Structural.csproj">
       <Project>{2e92f680-07eb-4a0a-af70-4eea51a83918}</Project>
       <Name>DesignPatterns.Structural</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DesignPatterns.Utilities\DesignPatterns.Utilities.csproj">
+      <Project>{db96f3fa-de76-406c-957a-427dd113bb15}</Project>
+      <Name>DesignPatterns.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

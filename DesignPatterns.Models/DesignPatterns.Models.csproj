@@ -50,6 +50,7 @@
     <Compile Include="Implementations\SimplePowerSource.cs" />
     <Compile Include="Implementations\TreadMobilitySystem.cs" />
     <Compile Include="IPowerSource.cs" />
+    <Compile Include="IRobotoProgram.cs" />
     <Compile Include="IThreeDimensionalMovementComponent.cs" />
     <Compile Include="ITwoDimensionalMovementComponent.cs" />
   </ItemGroup>

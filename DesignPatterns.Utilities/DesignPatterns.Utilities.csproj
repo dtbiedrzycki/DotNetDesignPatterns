@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2E92F680-07EB-4A0A-AF70-4EEA51A83918}</ProjectGuid>
+    <ProjectGuid>{DB96F3FA-DE76-406C-957A-427DD113BB15}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DesignPatterns.Structural</RootNamespace>
-    <AssemblyName>DesignPatterns.Structural</AssemblyName>
+    <RootNamespace>DesignPatterns.Utilities</RootNamespace>
+    <AssemblyName>DesignPatterns.Utilities</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,26 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adaptor\IThirdPartyMobilitySystem.cs" />
-    <Compile Include="Adaptor\ThirdPartyArmAdaptor.cs" />
-    <Compile Include="Decorator\Implementations\GetStatusDecorator.cs" />
-    <Compile Include="Decorator\IProgramDecorator.cs" />
-    <Compile Include="Decorator\Implementations\DecoratorBase.cs" />
-    <Compile Include="Decorator\Implementations\QuitDecorator.cs" />
-    <Compile Include="Decorator\Implementations\SayHelloDecorator.cs" />
+    <Compile Include="Implementations\ConsoleReader.cs" />
+    <Compile Include="Implementations\ConsoleWriter.cs" />
+    <Compile Include="IReader.cs" />
+    <Compile Include="IWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DesignPatterns.Models\DesignPatterns.Models.csproj">
-      <Project>{44ee8ebe-5930-497a-9ccf-3400fd75efd8}</Project>
-      <Name>DesignPatterns.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DesignPatterns.Utilities\DesignPatterns.Utilities.csproj">
-      <Project>{db96f3fa-de76-406c-957a-427dd113bb15}</Project>
-      <Name>DesignPatterns.Utilities</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
