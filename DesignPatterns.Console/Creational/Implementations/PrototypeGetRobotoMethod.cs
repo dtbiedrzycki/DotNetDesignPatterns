@@ -1,6 +1,8 @@
 ﻿using System;
 using BuilderPatterns;
-using BuilderPatterns.Implementations;
+using BuilderPatterns.AbstractFactory;
+using BuilderPatterns.Prototype;
+using BuilderPatterns.Prototype.Implementations;
 
 namespace DesignPatternConsole.Creational.Implementations
 {

@@ -1,5 +1,6 @@
 ﻿using System;
 using BuilderPatterns;
+using BuilderPatterns.Builder;
 
 namespace DesignPatternConsole.Creational.Implementations
 {

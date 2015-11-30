@@ -2,7 +2,7 @@
 using DesignPatterns;
 using DesignPatterns.Implementations;
 
-namespace BuilderPatterns.Implementations
+namespace BuilderPatterns.AbstractFactory.Implementations
 {
 	public class RobotoFactory : IRobotoFactory
 	{

@@ -1,6 +1,6 @@
 ﻿using DesignPatterns.Implementations;
 
-namespace BuilderPatterns.Implementations
+namespace BuilderPatterns.Prototype.Implementations
 {
 	public class RobotoPrototype : IRobotoPrototype
 	{

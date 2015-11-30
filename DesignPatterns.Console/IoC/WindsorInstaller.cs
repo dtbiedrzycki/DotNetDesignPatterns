@@ -1,5 +1,8 @@
 ﻿using BuilderPatterns;
-using BuilderPatterns.Implementations;
+using BuilderPatterns.AbstractFactory;
+using BuilderPatterns.AbstractFactory.Implementations;
+using BuilderPatterns.Builder;
+using BuilderPatterns.Builder.Implementations;
 using Castle.MicroKernel.Registration;
 using DesignPatternConsole.Creational;
 using DesignPatternConsole.Creational.Implementations;

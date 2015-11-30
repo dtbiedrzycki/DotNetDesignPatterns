@@ -1,6 +1,6 @@
 ﻿using DesignPatterns.Implementations;
 
-namespace BuilderPatterns
+namespace BuilderPatterns.Builder
 {
 	/// <summary>
 	/// A creational pattern that separates the object construction from its representation

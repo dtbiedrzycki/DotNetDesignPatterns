@@ -1,4 +1,4 @@
-﻿using BuilderPatterns.Implementations;
+﻿using BuilderPatterns.Singleton;
 
 namespace DesignPatternConsole.Creational.Implementations
 {

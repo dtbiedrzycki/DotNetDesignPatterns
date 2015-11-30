@@ -1,6 +1,6 @@
 ﻿using DesignPatterns.Implementations;
 
-namespace BuilderPatterns
+namespace BuilderPatterns.AbstractFactory
 {
 	/// <summary>
 	/// A creation pattern that creates instances of other classes

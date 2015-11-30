@@ -1,4 +1,6 @@
-﻿namespace BuilderPatterns
+﻿using BuilderPatterns.AbstractFactory;
+
+namespace BuilderPatterns.Prototype
 {
 	/// <summary>
 	/// A creational pattern that creates instances by taking a fully initialized instance and cloning it

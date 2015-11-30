@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using DesignPatterns;
 using DesignPatterns.Implementations;
 
-namespace BuilderPatterns.Implementations
+namespace BuilderPatterns.Singleton
 {
 	/// <summary>
 	/// A creational pattern in which only a single instance can exist
