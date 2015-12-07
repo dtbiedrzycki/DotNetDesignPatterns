@@ -4,7 +4,9 @@ using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using DesignPatternConsole;
 using DesignPatternConsole.Creational;
+using DesignPatternConsole.Structural;
 using DesignPatterns.Implementations;
+using DesignPatterns.Structural.Facade;
 using DesignPatterns.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -12,7 +14,7 @@ using Moq;
 namespace DesignPatterns.Console.UnitTests
 {
 	[TestClass]
-	public class ProgramTests
+	public class ProgramFacadeTests
 	{
 		private IWindsorContainer _windsorContainer;
 		private MockRepository _mockRepository;
@@ -23,6 +25,7 @@ namespace DesignPatterns.Console.UnitTests
 		private Mock<IBuilderGetRobotMethod> _builderGetRobotoMethod;
 		private Mock<IPrototypeGetRobotoMethod> _prototypeGetRobotoMethod;
 		private Mock<IRobotoProgram> _robotoProgram;
+		private IProgramFacade _instance;
 
 		[TestInitialize]
 		public void SetUp()
@@ -51,6 +54,10 @@ namespace DesignPatterns.Console.UnitTests
 			_windsorContainer.Register(Component.For<IBuilderGetRobotMethod>().Instance(_builderGetRobotoMethod.Object));
 			_windsorContainer.Register(Component.For<IPrototypeGetRobotoMethod>().Instance(_prototypeGetRobotoMethod.Object));
 			_windsorContainer.Register(Component.For<IRobotoProgram>().Instance(_robotoProgram.Object));
+			_windsorContainer.Register(Component.For<IProgramFacade>().ImplementedBy<ProgramFacade>().LifestyleTransient());
+
+			// Create instance to test
+			_instance = _windsorContainer.Resolve<IProgramFacade>();
 		}
 
 		[TestMethod]
@@ -63,7 +70,7 @@ namespace DesignPatterns.Console.UnitTests
 			_robotoProgram.Setup(x => x.Execute(It.Is<IEnumerable<Roboto>>(y => y.Count() == 1 && y.First() == roboto)));
 
 			// Act
-			Program.Execute(_windsorContainer);
+			_instance.Execute();
 
 			// Assert
 			_reader.Verify(x => x.ReadLine(), Times.Exactly(2));
@@ -85,7 +92,7 @@ namespace DesignPatterns.Console.UnitTests
 			_robotoProgram.Setup(x => x.Execute(It.Is<IEnumerable<Roboto>>(y => y.Count() == 1 && y.First() == roboto)));
 
 			// Act
-			Program.Execute(_windsorContainer);
+			_instance.Execute();
 
 			// Assert
 			_reader.Verify(x => x.ReadLine(), Times.Exactly(2));
@@ -107,7 +114,7 @@ namespace DesignPatterns.Console.UnitTests
 			_robotoProgram.Setup(x => x.Execute(It.Is<IEnumerable<Roboto>>(y => y.Count() == 1 && y.First() == roboto)));
 
 			// Act
-			Program.Execute(_windsorContainer);
+			_instance.Execute();
 
 			// Assert
 			_reader.Verify(x => x.ReadLine(), Times.Exactly(2));
@@ -129,7 +136,7 @@ namespace DesignPatterns.Console.UnitTests
 			_robotoProgram.Setup(x => x.Execute(It.Is<IEnumerable<Roboto>>(y => y.Count() == 1 && y.First() == roboto)));
 
 			// Act
-			Program.Execute(_windsorContainer);
+			_instance.Execute();
 
 			// Assert
 			_reader.Verify(x => x.ReadLine(), Times.Exactly(2));

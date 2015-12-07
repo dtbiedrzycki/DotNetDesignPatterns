@@ -1,5 +1,4 @@
-﻿using BuilderPatterns;
-using BuilderPatterns.AbstractFactory;
+﻿using BuilderPatterns.AbstractFactory;
 using BuilderPatterns.AbstractFactory.Implementations;
 using BuilderPatterns.Builder;
 using BuilderPatterns.Builder.Implementations;
@@ -8,6 +7,7 @@ using DesignPatternConsole.Creational;
 using DesignPatternConsole.Creational.Implementations;
 using DesignPatternConsole.Structural;
 using DesignPatterns;
+using DesignPatterns.Structural.Facade;
 using DesignPatterns.Utilities;
 using DesignPatterns.Utilities.Implementations;
 
@@ -41,6 +41,9 @@ namespace DesignPatternConsole.IoC
 										.LifestyleTransient());
 
 			container.Register(Component.For<ISingletonGetRobotoMethod>().ImplementedBy<SingletonGetRobotoMethod>().LifestyleTransient());
+
+			// Structural
+			container.Register(Component.For<IProgramFacade>().ImplementedBy<ProgramFacade>().LifestyleTransient());
 
 			// Programs
 			container.Register(Component.For<IRobotoProgram>().ImplementedBy<DecoratorProgram>().LifestyleTransient());

@@ -46,6 +46,7 @@
     <Compile Include="Decorator\Implementations\DecoratorBase.cs" />
     <Compile Include="Decorator\Implementations\QuitDecorator.cs" />
     <Compile Include="Decorator\Implementations\SayHelloDecorator.cs" />
+    <Compile Include="Facade\IProgramFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
