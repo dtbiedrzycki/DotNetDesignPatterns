@@ -16,6 +16,8 @@ namespace BuilderPatterns.Singleton
 				var powerSource = new UnlimitedPowerSource();
 				var roboto = new AlphaRobotoSingleton
 				{
+					Id = Guid.NewGuid(),
+					Name = "Alpha Roboto (Singleton)",
 					PowerSource = powerSource,
 					Arms = new List<IArm>
 					{

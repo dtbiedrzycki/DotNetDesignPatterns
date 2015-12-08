@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DesignPatterns;
 using DesignPatterns.Implementations;
 
@@ -12,6 +13,8 @@ namespace BuilderPatterns.Builder.Implementations
 		{
 			_roboto = new Roboto
 			{
+				Id = Guid.NewGuid(),
+				Name = "Builder Roboto",
 				PowerSource = new SimplePowerSource()
 			};
 		}

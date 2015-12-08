@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DesignPatterns;
 using DesignPatterns.Implementations;
 
@@ -11,6 +12,8 @@ namespace BuilderPatterns.AbstractFactory.Implementations
 			var powerSource = new SimplePowerSource();
 			var roboto = new Roboto
 			{
+				Id = Guid.NewGuid(),
+				Name = "Rolling Roboto",
 				PowerSource = powerSource,
 				Arms = new List<IArm> {new SimpleArm(new SimpleMotor(powerSource))},
 				MobilitySystem = new TreadMobilitySystem(new SimpleMotor(powerSource))
@@ -24,6 +27,8 @@ namespace BuilderPatterns.AbstractFactory.Implementations
 			var powerSource = new SimplePowerSource();
 			var roboto = new Roboto
 			{
+				Id = Guid.NewGuid(),
+				Name = "Humanoid Roboto",
 				PowerSource = powerSource,
 				Arms = new List<IArm>
 				{
@@ -34,7 +39,6 @@ namespace BuilderPatterns.AbstractFactory.Implementations
 			};
 
 			return roboto;
-			;
 		}
 	}
 }

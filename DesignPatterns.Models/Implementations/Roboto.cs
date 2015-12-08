@@ -9,6 +9,8 @@ namespace DesignPatterns.Implementations
 		public IPowerSource PowerSource { get; set; }
 		public List<IArm> Arms { get; set; }
 		public IMobilitySystem MobilitySystem { get; set; }
+		public Guid Id { get; set; }
+		public String Name { get; set; }
 
 		public object Clone()
 		{
@@ -20,6 +22,9 @@ namespace DesignPatterns.Implementations
 			var output = new StringBuilder();
 
 			output.AppendLine("=== ROBO INFO ===");
+			output.AppendLine("=== General Info ===");
+			output.AppendLine("Name: " + Name);
+			output.AppendLine("Id: " + Id);
 			output.AppendLine("=== Location ===");
 			output.AppendLine(MobilitySystem.CurrentCoordinates.ToString());
 			output.AppendLine("=== Arms INFO ===");

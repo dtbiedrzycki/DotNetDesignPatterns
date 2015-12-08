@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DesignPatterns;
 using DesignPatterns.Implementations;
 
@@ -53,7 +54,14 @@ namespace BuilderPatterns.Builder.Implementations
 
 		public Roboto GetRoboto()
 		{
-			return _currentRoboto.Clone() as Roboto;
+			Roboto newRoboto = _currentRoboto.Clone() as Roboto;
+			if (newRoboto != null)
+			{
+				newRoboto.Id = Guid.NewGuid();
+				newRoboto.Name = "Robo de Prototype";
+			}
+
+			return newRoboto;
 		}
 	}
 }
