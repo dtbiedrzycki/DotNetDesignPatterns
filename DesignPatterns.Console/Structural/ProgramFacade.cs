@@ -17,6 +17,7 @@ namespace DesignPatternConsole.Structural
 		private readonly IPrototypeGetRobotoMethod _prototypeGetRobotoMethod;
 		private readonly IRobotoProgram _decoratorProgram;
 		private readonly IRobotoProgram _repositoryProgram;
+		private readonly IRobotoProgram _chainOfResponsibilityProgram;
 
 		public ProgramFacade(
 			IWriter writer,
@@ -26,7 +27,8 @@ namespace DesignPatternConsole.Structural
 			IBuilderGetRobotMethod builderGerRobotMethod,
 			IPrototypeGetRobotoMethod prototypeGetRobotoMethod,
 			IRobotoProgram decoratorProgram,
-			IRobotoProgram repositoryProgram)
+			IRobotoProgram repositoryProgram,
+			IRobotoProgram chainOfResponsibilityProgram)
 		{
 			_writer = writer;
 			_reader = reader;
@@ -36,6 +38,7 @@ namespace DesignPatternConsole.Structural
 			_prototypeGetRobotoMethod = prototypeGetRobotoMethod;
 			_decoratorProgram = decoratorProgram;
 			_repositoryProgram = repositoryProgram;
+			_chainOfResponsibilityProgram = chainOfResponsibilityProgram;
 		}
 
 
@@ -77,7 +80,7 @@ namespace DesignPatternConsole.Structural
 
 			// Get user input for program selection
 			_writer.WriteLine("Please select a program to run");
-			_writer.WriteLine("1: DecoratorGetStatus\t2: Repository");
+			_writer.WriteLine("1: DecoratorGetStatus\t2: Repository\t3: ChainOfResponsibility");
 
 			input = _reader.ReadLine();
 			choice = Convert.ToInt32(input);
@@ -92,6 +95,10 @@ namespace DesignPatternConsole.Structural
 
 				case 2:
 					robotoProgram = _repositoryProgram;
+					break;
+
+				case 3:
+					robotoProgram = _chainOfResponsibilityProgram;
 					break;
 
 				default:

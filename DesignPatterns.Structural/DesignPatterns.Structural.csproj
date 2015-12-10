@@ -45,6 +45,14 @@
   <ItemGroup>
     <Compile Include="Adaptor\IThirdPartyMobilitySystem.cs" />
     <Compile Include="Adaptor\ThirdPartyArmAdaptor.cs" />
+    <Compile Include="ChainOfResponsibility\Factory\IMessageHandlerFactory.cs" />
+    <Compile Include="ChainOfResponsibility\Factory\Implementation\MessageHandlerFactory.cs" />
+    <Compile Include="ChainOfResponsibility\IMessageHandler.cs" />
+    <Compile Include="ChainOfResponsibility\Implementations\AllCapsMessageHandler.cs" />
+    <Compile Include="ChainOfResponsibility\Implementations\MessageHandlerBase.cs" />
+    <Compile Include="ChainOfResponsibility\Implementations\RemoveSpecialCharactersMessageHandler.cs" />
+    <Compile Include="ChainOfResponsibility\Implementations\SplitOnDelimeterMessageHandler.cs" />
+    <Compile Include="ChainOfResponsibility\Implementations\WriteMessageHandler.cs" />
     <Compile Include="Decorator\Implementations\GetStatusDecorator.cs" />
     <Compile Include="Decorator\IProgramDecorator.cs" />
     <Compile Include="Decorator\Implementations\DecoratorBase.cs" />
@@ -68,6 +76,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

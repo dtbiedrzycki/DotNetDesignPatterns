@@ -61,6 +61,7 @@
     <Compile Include="IoC\WindsorInstaller.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structural\Programs\ChainOfResponsibilityProgram.cs" />
     <Compile Include="Structural\Programs\DecoratorProgram.cs" />
     <Compile Include="Structural\ProgramFacade.cs" />
     <Compile Include="Structural\Programs\RepositoryProgram.cs" />

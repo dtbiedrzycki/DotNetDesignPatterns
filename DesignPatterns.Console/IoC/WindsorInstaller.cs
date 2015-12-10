@@ -9,6 +9,8 @@ using DesignPatternConsole.Creational.Implementations;
 using DesignPatternConsole.Structural;
 using DesignPatternConsole.Structural.Programs;
 using DesignPatterns;
+using DesignPatterns.Structural.ChainOfResponsibility.Factory;
+using DesignPatterns.Structural.ChainOfResponsibility.Factory.Implementation;
 using DesignPatterns.Structural.Facade;
 using DesignPatterns.Structural.Repository;
 using DesignPatterns.Structural.Repository.Implementation;
@@ -19,7 +21,6 @@ namespace DesignPatternConsole.IoC
 {
 	internal class WindsorInstaller : IWindsorInstaller
 	{
-
 		public void Install(Castle.Windsor.IWindsorContainer container, Castle.MicroKernel.SubSystems.Configuration.IConfigurationStore store)
 		{
 			// Creational
@@ -48,12 +49,18 @@ namespace DesignPatternConsole.IoC
 
 			// Structural
 			container.Register(Component.For<IRobotoRepository>().ImplementedBy<RobotoFileRepository>().LifestyleTransient());
+			container.Register(Component.For<IMessageHandlerFactory>().ImplementedBy<MessageHandlerFactory>().LifestyleTransient());
 
 			// Programs
 			container.Register(
 				Component.For<IRobotoProgram>().ImplementedBy<DecoratorProgram>()
 					.LifestyleTransient()
 					.Named("decoratorProgram"));
+
+			container.Register(
+				Component.For<IRobotoProgram>().ImplementedBy<ChainOfResponsibilityProgram>()
+					.LifestyleTransient()
+					.Named("chainOfResponsibilityProgram"));
 
 			container.Register(
 				Component.For<IRobotoProgram>().ImplementedBy<RepositoryProgram>()
@@ -64,6 +71,7 @@ namespace DesignPatternConsole.IoC
 			container.Register(
 				Component.For<IProgramFacade>().ImplementedBy<ProgramFacade>().LifestyleTransient()
 				.DependsOn(Dependency.OnComponent("decoratorProgram", "decoratorProgram"))
+				.DependsOn(Dependency.OnComponent("chainOfResponsibilityProgram", "chainOfResponsibilityProgram"))
 				.DependsOn(Dependency.OnComponent("repositoryProgram", "repositoryProgram")));
 		}
 	}

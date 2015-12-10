@@ -41,17 +41,17 @@ namespace DesignPatterns.Structural.Repository.Implementation
 				 robotos = System.IO.File.ReadAllLines(this.GetFilePath())
 					.Select(x =>
 					{
-						dynamic dyn = JsonConvert.DeserializeObject(x);
+						dynamic robotoInfo = JsonConvert.DeserializeObject(x);
 						return new Roboto()
 						{
-							Id = dyn.id,
-							Name = dyn.name
+							Id = robotoInfo.id,
+							Name = robotoInfo.name
 						};
 					});
 			}
-			catch (FileNotFoundException ex)
+			catch (FileNotFoundException)
 			{
-				// do nothing
+				// do nothing, the file hasn't yet been created
 			}
 
 			return robotos;

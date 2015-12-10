@@ -28,8 +28,8 @@ namespace DesignPatternConsole.Structural.Programs
 
 			string input = "";
 			const string quitCommand = "q";
-			const string listCommand = "list";
-			const string saveCommand = "save";
+			const string listCommand = "l";
+			const string saveCommand = "s";
 			bool savedRoboto = false;
 
 			while (input != quitCommand)
