@@ -53,6 +53,12 @@
     <Compile Include="ChainOfResponsibility\Implementations\RemoveSpecialCharactersMessageHandler.cs" />
     <Compile Include="ChainOfResponsibility\Implementations\SplitOnDelimeterMessageHandler.cs" />
     <Compile Include="ChainOfResponsibility\Implementations\WriteMessageHandler.cs" />
+    <Compile Include="Command\ICommand.cs" />
+    <Compile Include="Command\IInvoker.cs" />
+    <Compile Include="Command\Implementations\SentenceMakerCommand.cs" />
+    <Compile Include="Command\Implementations\SentenceMakerInvoker.cs" />
+    <Compile Include="Command\Implementations\SentenceMakerReceiver.cs" />
+    <Compile Include="Command\IReceiver.cs" />
     <Compile Include="Decorator\Implementations\GetStatusDecorator.cs" />
     <Compile Include="Decorator\IProgramDecorator.cs" />
     <Compile Include="Decorator\Implementations\DecoratorBase.cs" />

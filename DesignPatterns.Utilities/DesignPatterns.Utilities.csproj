@@ -39,8 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICypher.cs" />
     <Compile Include="Implementations\ConsoleReader.cs" />
     <Compile Include="Implementations\ConsoleWriter.cs" />
+    <Compile Include="Implementations\Cypher.cs" />
     <Compile Include="IReader.cs" />
     <Compile Include="IWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

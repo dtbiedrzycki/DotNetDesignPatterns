@@ -1,0 +1,74 @@
+﻿using System;
+using System.Collections.Generic;
+using DesignPatterns;
+using DesignPatterns.Implementations;
+using DesignPatterns.Structural.Command;
+using DesignPatterns.Structural.Command.Implementations;
+using DesignPatterns.Utilities;
+
+namespace DesignPatternConsole.Structural.Programs
+{
+	public class CommandProgram : IRobotoProgram
+	{
+		private readonly IInvoker _invoker;
+		private readonly IWriter _writer;
+		private readonly IReader _reader;
+
+		public CommandProgram(IInvoker invoker, IWriter writer, IReader reader)
+		{
+			_invoker = invoker;
+			_writer = writer;
+			_reader = reader;
+		}
+
+		public void Execute(IEnumerable<Roboto> robotos)
+		{
+			_writer.WriteLine("=== Running the Command Program ===");
+
+			string input = String.Empty;
+			const string quitCommand = "q";
+			const string addCommand = "a";
+			const string encryptCommand = "e";
+			const string undoCommand = "z";
+
+			while (input != quitCommand)
+			{
+				_writer.WriteLine("=== Please Select onf or the following commands ===");
+				_writer.WriteLine(quitCommand + " -> quit");
+				_writer.WriteLine(addCommand + " [sentence/words/characters to add] -> add to sentence");
+				_writer.WriteLine(encryptCommand + " -> encrypt sentence");
+				_writer.WriteLine(undoCommand + " -> undo");
+				_writer.WriteLine("");
+
+				input = _reader.ReadLine();
+				int firstWSIndex = input.IndexOf(" ", StringComparison.Ordinal);
+				string parameter = String.Empty;
+				if (firstWSIndex != -1)
+				{
+					int charactersToSkip = firstWSIndex + 1;
+					parameter = input.Substring(charactersToSkip, input.Length - charactersToSkip);
+					input = input.Substring(0, firstWSIndex);
+				}
+				
+				switch (input)
+				{
+					case addCommand: 
+						_invoker.Do(SentenceMakerCommand.SentenceCommandName.Add, parameter);
+						break;
+					case encryptCommand:
+						_invoker.Do(SentenceMakerCommand.SentenceCommandName.Encrypt, null);
+						break;
+					case undoCommand:
+						_invoker.Undo();
+						break;
+                    default:
+						break;
+				}
+			}
+
+			_writer.WriteLine(Environment.NewLine + "=== Program Completed ===");
+			_writer.WriteLine("Press any key to quit");
+			_reader.ReadLine();
+		}
+	}
+}
