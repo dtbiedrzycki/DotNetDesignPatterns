@@ -1,16 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2E92F680-07EB-4A0A-AF70-4EEA51A83918}</ProjectGuid>
+    <ProjectGuid>{3569660B-BD69-4008-AB0B-FC475F3B75C1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DesignPatterns.Structural</RootNamespace>
-    <AssemblyName>DesignPatterns.Structural</AssemblyName>
+    <RootNamespace>DesignPatterns.Behavioral</RootNamespace>
+    <AssemblyName>DesignPatterns.Behavioral</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,30 +31,31 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adaptor\IThirdPartyMobilitySystem.cs" />
-    <Compile Include="Adaptor\ThirdPartyArmAdaptor.cs" />
-    <Compile Include="Decorator\Implementations\GetStatusDecorator.cs" />
-    <Compile Include="Decorator\IProgramDecorator.cs" />
-    <Compile Include="Decorator\Implementations\DecoratorBase.cs" />
-    <Compile Include="Decorator\Implementations\QuitDecorator.cs" />
-    <Compile Include="Decorator\Implementations\SayHelloDecorator.cs" />
-    <Compile Include="Facade\IProgramFacade.cs" />
+    <Compile Include="ChainOfResponsibility\Factory\IMessageHandlerFactory.cs" />
+    <Compile Include="ChainOfResponsibility\Factory\Implementation\MessageHandlerFactory.cs" />
+    <Compile Include="ChainOfResponsibility\IMessageHandler.cs" />
+    <Compile Include="ChainOfResponsibility\Implementations\AllCapsMessageHandler.cs" />
+    <Compile Include="ChainOfResponsibility\Implementations\MessageHandlerBase.cs" />
+    <Compile Include="ChainOfResponsibility\Implementations\RemoveSpecialCharactersMessageHandler.cs" />
+    <Compile Include="ChainOfResponsibility\Implementations\SplitOnDelimeterMessageHandler.cs" />
+    <Compile Include="ChainOfResponsibility\Implementations\WriteMessageHandler.cs" />
+    <Compile Include="Command\ICommand.cs" />
+    <Compile Include="Command\IInvoker.cs" />
+    <Compile Include="Command\Implementations\SentenceMakerCommand.cs" />
+    <Compile Include="Command\Implementations\SentenceMakerInvoker.cs" />
+    <Compile Include="Command\Implementations\SentenceMakerReceiver.cs" />
+    <Compile Include="Command\IReceiver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\Implementation\RobotoFileRepository.cs" />
-    <Compile Include="Repository\IRobotoRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DesignPatterns.Models\DesignPatterns.Models.csproj">
@@ -65,10 +67,6 @@
       <Name>DesignPatterns.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

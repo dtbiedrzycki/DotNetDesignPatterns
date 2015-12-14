@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace DesignPatterns.Structural.Command.Implementations
+namespace DesignPatterns.Behavioral.Command.Implementations
 {
 	public class SentenceMakerInvoker : IInvoker
 	{

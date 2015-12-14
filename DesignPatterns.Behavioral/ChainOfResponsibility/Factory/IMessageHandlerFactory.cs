@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Structural.ChainOfResponsibility.Factory
+﻿namespace DesignPatterns.Behavioral.ChainOfResponsibility.Factory
 {
 	/// <summary>
 	/// Note that this component is not part of the chain of responsibility design pattern

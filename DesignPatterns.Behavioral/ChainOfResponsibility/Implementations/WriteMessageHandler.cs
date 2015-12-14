@@ -1,6 +1,6 @@
 ﻿using DesignPatterns.Utilities;
 
-namespace DesignPatterns.Structural.ChainOfResponsibility.Implementations
+namespace DesignPatterns.Behavioral.ChainOfResponsibility.Implementations
 {
 	public class WriteMessageHandler : MessageHandlerBase
 	{

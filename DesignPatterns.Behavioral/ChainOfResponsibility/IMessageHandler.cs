@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Structural.ChainOfResponsibility
+﻿namespace DesignPatterns.Behavioral.ChainOfResponsibility
 {
 	public interface IMessageHandler
 	{

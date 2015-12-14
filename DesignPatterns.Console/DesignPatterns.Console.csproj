@@ -72,6 +72,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DesignPatterns.Behavioral\DesignPatterns.Behavioral.csproj">
+      <Project>{3569660b-bd69-4008-ab0b-fc475f3b75c1}</Project>
+      <Name>DesignPatterns.Behavioral</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DesignPatterns.Creational\DesignPatterns.Creational.csproj">
       <Project>{37bc22ce-70bf-465e-967b-653e3530425f}</Project>
       <Name>DesignPatterns.Creational</Name>

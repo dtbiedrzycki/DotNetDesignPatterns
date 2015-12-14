@@ -1,5 +1,5 @@
 ﻿
-namespace DesignPatterns.Structural.ChainOfResponsibility.Implementations
+namespace DesignPatterns.Behavioral.ChainOfResponsibility.Implementations
 {
 	public class SplitOnDelimeterMessageHandler : MessageHandlerBase
 	{

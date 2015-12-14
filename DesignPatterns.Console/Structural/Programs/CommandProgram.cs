@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using DesignPatterns;
+using DesignPatterns.Behavioral.Command;
+using DesignPatterns.Behavioral.Command.Implementations;
 using DesignPatterns.Implementations;
-using DesignPatterns.Structural.Command;
-using DesignPatterns.Structural.Command.Implementations;
 using DesignPatterns.Utilities;
 
 namespace DesignPatternConsole.Structural.Programs

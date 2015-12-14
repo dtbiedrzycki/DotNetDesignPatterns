@@ -1,7 +1,7 @@
 ﻿using System;
 using DesignPatterns.Utilities;
 
-namespace DesignPatterns.Structural.Command.Implementations
+namespace DesignPatterns.Behavioral.Command.Implementations
 {
 	public class SentenceMakerReceiver : IReceiver
 	{

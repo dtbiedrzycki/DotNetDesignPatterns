@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DesignPatterns.Structural.Command.Implementations
+namespace DesignPatterns.Behavioral.Command.Implementations
 {
 	public class SentenceMakerCommand : ICommand
 	{

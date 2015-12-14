@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace DesignPatterns.Structural.ChainOfResponsibility.Implementations
+namespace DesignPatterns.Behavioral.ChainOfResponsibility.Implementations
 {
 	public class RemoveSpecialCharactersMessageHandler : MessageHandlerBase
 	{

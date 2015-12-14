@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Console", "DesignPatterns.Console\DesignPatterns.Console.csproj", "{7A00549B-1518-4301-B539-3AA9C22F35CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Models", "DesignPatterns.Models\DesignPatterns.Models.csproj", "{44EE8EBE-5930-497A-9CCF-3400FD75EFD8}"
@@ -12,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Console.UnitTests", "DesignPatterns.Console.UnitTests\DesignPatterns.Console.UnitTests.csproj", "{C2193C65-0201-4930-B1B5-D36E7D06D218}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Utilities", "DesignPatterns.Utilities\DesignPatterns.Utilities.csproj", "{DB96F3FA-DE76-406C-957A-427DD113BB15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Behavioral", "DesignPatterns.Behavioral\DesignPatterns.Behavioral.csproj", "{3569660B-BD69-4008-AB0B-FC475F3B75C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +47,10 @@ Global
 		{DB96F3FA-DE76-406C-957A-427DD113BB15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB96F3FA-DE76-406C-957A-427DD113BB15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB96F3FA-DE76-406C-957A-427DD113BB15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3569660B-BD69-4008-AB0B-FC475F3B75C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3569660B-BD69-4008-AB0B-FC475F3B75C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3569660B-BD69-4008-AB0B-FC475F3B75C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3569660B-BD69-4008-AB0B-FC475F3B75C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

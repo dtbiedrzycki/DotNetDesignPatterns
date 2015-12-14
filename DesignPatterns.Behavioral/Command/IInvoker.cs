@@ -1,6 +1,6 @@
-﻿using DesignPatterns.Structural.Command.Implementations;
+﻿using DesignPatterns.Behavioral.Command.Implementations;
 
-namespace DesignPatterns.Structural.Command
+namespace DesignPatterns.Behavioral.Command
 {
 	public interface IInvoker
 	{

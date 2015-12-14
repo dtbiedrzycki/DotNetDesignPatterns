@@ -1,8 +1,7 @@
-﻿using System.Threading;
-using DesignPatterns.Structural.ChainOfResponsibility.Implementations;
+﻿using DesignPatterns.Behavioral.ChainOfResponsibility.Implementations;
 using DesignPatterns.Utilities;
 
-namespace DesignPatterns.Structural.ChainOfResponsibility.Factory.Implementation
+namespace DesignPatterns.Behavioral.ChainOfResponsibility.Factory.Implementation
 {
 	public class MessageHandlerFactory : IMessageHandlerFactory
 	{

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Castle.Core.Internal;
 using DesignPatterns;
+using DesignPatterns.Behavioral.ChainOfResponsibility;
+using DesignPatterns.Behavioral.ChainOfResponsibility.Factory;
 using DesignPatterns.Implementations;
-using DesignPatterns.Structural.ChainOfResponsibility;
-using DesignPatterns.Structural.ChainOfResponsibility.Factory;
 using DesignPatterns.Utilities;
 
 namespace DesignPatternConsole.Structural.Programs

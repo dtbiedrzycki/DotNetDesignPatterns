@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DesignPatterns.Structural.ChainOfResponsibility.Implementations
+﻿namespace DesignPatterns.Behavioral.ChainOfResponsibility.Implementations
 {
 	public abstract class MessageHandlerBase : IMessageHandler
 	{
