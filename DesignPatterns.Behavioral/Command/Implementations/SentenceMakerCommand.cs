@@ -37,6 +37,10 @@ namespace DesignPatterns.Behavioral.Command.Implementations
 					return SentenceCommandName.Decrypt;
 				case SentenceCommandName.Decrypt:
 					return SentenceCommandName.Encrypt;
+				case SentenceCommandName.RemoveSpecialCharacters:
+					return SentenceCommandName.RevertRemoveSpecialCharacters;
+				case SentenceCommandName.RevertRemoveSpecialCharacters:
+					return SentenceCommandName.RemoveSpecialCharacters;
 				default:
 					throw new ArgumentException("Invalid command");
 			}
@@ -48,6 +52,8 @@ namespace DesignPatterns.Behavioral.Command.Implementations
 			Remove,
 			Encrypt,
 			Decrypt,
+			RemoveSpecialCharacters,
+			RevertRemoveSpecialCharacters,
 		}
 	}
 }

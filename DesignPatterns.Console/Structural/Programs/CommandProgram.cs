@@ -29,6 +29,7 @@ namespace DesignPatternConsole.Structural.Programs
 			const string quitCommand = "q";
 			const string addCommand = "a";
 			const string encryptCommand = "e";
+			const string removeSpecialCharacters = "rsc";
 			const string undoCommand = "z";
 
 			while (input != quitCommand)
@@ -37,6 +38,7 @@ namespace DesignPatternConsole.Structural.Programs
 				_writer.WriteLine(quitCommand + " -> quit");
 				_writer.WriteLine(addCommand + " [sentence/words/characters to add] -> add to sentence");
 				_writer.WriteLine(encryptCommand + " -> encrypt sentence");
+				_writer.WriteLine(removeSpecialCharacters + " -> remove special characters");
 				_writer.WriteLine(undoCommand + " -> undo");
 				_writer.WriteLine("");
 
@@ -60,6 +62,9 @@ namespace DesignPatternConsole.Structural.Programs
 						break;
 					case undoCommand:
 						_invoker.Undo();
+						break;
+					case removeSpecialCharacters:
+						_invoker.Do(SentenceMakerCommand.SentenceCommandName.RemoveSpecialCharacters, null);
 						break;
                     default:
 						break;

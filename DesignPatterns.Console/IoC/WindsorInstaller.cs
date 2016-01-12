@@ -77,12 +77,18 @@ namespace DesignPatternConsole.IoC
 					.LifestyleTransient()
 					.Named("commandProgram"));
 
+			container.Register(
+				Component.For<IRobotoProgram>().ImplementedBy<ObserverProgram>()
+					.LifestyleTransient()
+					.Named("observerProgram"));
+
 			// This allows us to specify which implementation by the parameter name
 			container.Register(
 				Component.For<IProgramFacade>().ImplementedBy<ProgramFacade>().LifestyleTransient()
 				.DependsOn(Dependency.OnComponent("decoratorProgram", "decoratorProgram"))
 				.DependsOn(Dependency.OnComponent("chainOfResponsibilityProgram", "chainOfResponsibilityProgram"))
 				.DependsOn(Dependency.OnComponent("commandProgram", "commandProgram"))
+				.DependsOn(Dependency.OnComponent("observerProgram", "observerProgram"))
 				.DependsOn(Dependency.OnComponent("repositoryProgram", "repositoryProgram")));
 		}
 	}

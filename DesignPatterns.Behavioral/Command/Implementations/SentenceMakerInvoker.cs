@@ -6,12 +6,12 @@ namespace DesignPatterns.Behavioral.Command.Implementations
 	public class SentenceMakerInvoker : IInvoker
 	{
 		private readonly IReceiver _receiver;
-		private readonly List<ICommand> _commands;
+		private readonly Stack<ICommand> _commands;
 
 		public SentenceMakerInvoker(IReceiver receiver)
 		{
 			_receiver = receiver;
-			_commands = new List<ICommand>();
+			_commands = new Stack<ICommand>();
 		}
 
 		public void Do(SentenceMakerCommand.SentenceCommandName commandName, string commandParams)
@@ -19,16 +19,18 @@ namespace DesignPatterns.Behavioral.Command.Implementations
 			// TODO: factory here
 			ICommand newCommand = new SentenceMakerCommand(this._receiver, commandName, commandParams);
 			newCommand.Execute();
-			_commands.Add(newCommand);
+			_commands.Push(newCommand);
 		}
 
 		public void Undo()
 		{
-			ICommand previousCommand = _commands.LastOrDefault();
-			if (previousCommand != null)
+			if (_commands.Any())
 			{
-				previousCommand.UnExecute();
-				_commands.RemoveAt(_commands.Count - 1);
+				ICommand previousCommand = _commands.Pop();
+				if (previousCommand != null)
+				{
+					previousCommand.UnExecute();
+				}
 			}
 		}
 	}
