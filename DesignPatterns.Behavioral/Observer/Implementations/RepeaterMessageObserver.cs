@@ -5,7 +5,6 @@ namespace DesignPatterns.Behavioral.Observer.Implementations
 {
 	public class RepeaterMessageObserver : MessageObserverBase, IDisposable
 	{
-		private Process _process;
 		public RepeaterMessageObserver(IMessageSubject subject) : base(subject)
 		{
 		}

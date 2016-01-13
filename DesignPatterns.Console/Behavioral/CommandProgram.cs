@@ -6,7 +6,7 @@ using DesignPatterns.Behavioral.Command.Implementations;
 using DesignPatterns.Implementations;
 using DesignPatterns.Utilities;
 
-namespace DesignPatternConsole.Structural.Programs
+namespace DesignPatternConsole.Behavioral
 {
 	public class CommandProgram : IRobotoProgram
 	{
@@ -21,7 +21,7 @@ namespace DesignPatternConsole.Structural.Programs
 			_reader = reader;
 		}
 
-		public void Execute(IEnumerable<Roboto> robotos)
+		public void Execute()
 		{
 			_writer.WriteLine("=== Running the Command Program ===");
 

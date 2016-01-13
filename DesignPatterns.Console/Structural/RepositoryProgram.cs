@@ -1,30 +1,37 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
+using BuilderPatterns.AbstractFactory;
 using Castle.Core.Internal;
 using DesignPatterns;
+using DesignPatterns.Implementations;
 using DesignPatterns.Structural.Repository;
 using DesignPatterns.Utilities;
-using DesignPatterns.Implementations;
 
-namespace DesignPatternConsole.Structural.Programs
+namespace DesignPatternConsole.Structural
 {
 	public class RepositoryProgram : IRobotoProgram
 	{
 		private readonly IRobotoRepository _robotoRepository;
+		private readonly IRobotoFactory _robotoFactory;
 		private readonly IWriter _writer;
 		private readonly IReader _reader;
 
-		public RepositoryProgram(IRobotoRepository robotoRepository, IWriter writer, IReader reader)
+		public RepositoryProgram(IRobotoRepository robotoRepository, IRobotoFactory robotoFactory, IWriter writer, IReader reader)
 		{
 			_robotoRepository = robotoRepository;
+			_robotoFactory = robotoFactory;
 			_writer = writer;
 			_reader = reader;
 		}
 
-		public void Execute(System.Collections.Generic.IEnumerable<Roboto> robotos)
+		public void Execute()
 		{
 			_writer.WriteLine("=== Running the Repository Program ===");
+			Roboto[] robotos = new[]
+			{
+				_robotoFactory.CreateHumanoidRoboto(),
+				_robotoFactory.CreateRollingRoboto()
+			};
 
 			string input = "";
 			const string quitCommand = "q";

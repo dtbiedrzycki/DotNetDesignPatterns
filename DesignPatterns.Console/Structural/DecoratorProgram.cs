@@ -3,7 +3,7 @@ using DesignPatterns.Structural.Decorator;
 using DesignPatterns.Structural.Decorator.Implementations;
 using DesignPatterns.Utilities;
 
-namespace DesignPatternConsole.Structural.Programs
+namespace DesignPatternConsole.Structural
 {
 	public class DecoratorProgram : IRobotoProgram
 	{
@@ -16,18 +16,16 @@ namespace DesignPatternConsole.Structural.Programs
 			_reader = reader;
 		}
 
-		public void Execute(System.Collections.Generic.IEnumerable<DesignPatterns.Implementations.Roboto> robotos)
+		public void Execute()
 		{
 			_writer.WriteLine("=== Running the Decorator Program ===");
 
 			IProgramDecorator sayHelloProgramDecorator = new SayHelloDecorator(_writer);
-			IProgramDecorator getStatusProgramDecorator = new GetStatusDecorator(_writer);
 			IProgramDecorator quitProgramDecorator = new QuitDecorator(_writer, _reader);
 
-			getStatusProgramDecorator.SetProgram(sayHelloProgramDecorator);
-			quitProgramDecorator.SetProgram(getStatusProgramDecorator);
+			quitProgramDecorator.SetProgram(sayHelloProgramDecorator);
 
-			quitProgramDecorator.Execute(robotos);
+			quitProgramDecorator.Execute();
 		}
 	}
 }

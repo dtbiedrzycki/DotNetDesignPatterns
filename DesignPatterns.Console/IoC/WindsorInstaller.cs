@@ -2,12 +2,9 @@
 using BuilderPatterns.AbstractFactory.Implementations;
 using BuilderPatterns.Builder;
 using BuilderPatterns.Builder.Implementations;
-using Castle.Facilities.TypedFactory;
 using Castle.MicroKernel.Registration;
-using DesignPatternConsole.Creational;
-using DesignPatternConsole.Creational.Implementations;
+using DesignPatternConsole.Behavioral;
 using DesignPatternConsole.Structural;
-using DesignPatternConsole.Structural.Programs;
 using DesignPatterns;
 using DesignPatterns.Behavioral.ChainOfResponsibility.Factory;
 using DesignPatterns.Behavioral.ChainOfResponsibility.Factory.Implementation;
@@ -33,22 +30,6 @@ namespace DesignPatternConsole.IoC
 			container.Register(Component.For<IWriter>().ImplementedBy<ConsoleWriter>().LifestyleSingleton());
 			container.Register(Component.For<IReader>().ImplementedBy<ConsoleReader>().LifestyleSingleton());
 			container.Register(Component.For<ICypher>().ImplementedBy<Cypher>().LifestyleSingleton());
-
-			// GetRobotos
-			container.Register(Component.For<IFactoryGetRobotoMethod>()
-										.ImplementedBy<FactoryGetRobotoMethod>()
-										.DynamicParameters((kernel, parameters) => parameters["dateTime"] = System.DateTime.Now)
-										.LifestyleTransient());
-			container.Register(Component.For<IBuilderGetRobotMethod>()
-										.ImplementedBy<BuilderGetRobotoMethod>()
-										.DynamicParameters((kernel, parameters) => parameters["dateTime"] = System.DateTime.Now)
-										.LifestyleTransient());
-			container.Register(Component.For<IPrototypeGetRobotoMethod>()
-										.ImplementedBy<PrototypeGetRobotoMethod>()
-										.DynamicParameters((kernel, parameters) => parameters["dateTime"] = System.DateTime.Now)
-										.LifestyleTransient());
-
-			container.Register(Component.For<ISingletonGetRobotoMethod>().ImplementedBy<SingletonGetRobotoMethod>().LifestyleTransient());
 
 			// Structural
 			container.Register(Component.For<IRobotoRepository>().ImplementedBy<RobotoFileRepository>().LifestyleTransient());

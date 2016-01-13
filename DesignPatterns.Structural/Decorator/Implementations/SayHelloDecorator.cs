@@ -13,9 +13,9 @@ namespace DesignPatterns.Structural.Decorator.Implementations
 			_writer = writer;
 		}
 
-		public override void Execute(IEnumerable<Roboto> robotos)
+		public override void Execute()
 		{
-			base.Execute(robotos);
+			base.Execute();
 
 			_writer.WriteLine("Hello world!");
 		}

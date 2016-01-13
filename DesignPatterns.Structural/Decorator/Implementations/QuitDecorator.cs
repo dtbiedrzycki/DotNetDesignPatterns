@@ -14,9 +14,9 @@ namespace DesignPatterns.Structural.Decorator.Implementations
 			_reader = reader;
 		}
 
-		public override void Execute(System.Collections.Generic.IEnumerable<Roboto> robotos)
+		public override void Execute()
 		{
-			base.Execute(robotos);
+			base.Execute();
 
 			_writer.WriteLine("Press any key to quit");
 			_reader.ReadLine();

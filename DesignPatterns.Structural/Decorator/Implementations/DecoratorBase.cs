@@ -11,11 +11,11 @@ namespace DesignPatterns.Structural.Decorator.Implementations
 			Program = program;
 		}
 
-		public virtual void Execute(System.Collections.Generic.IEnumerable<Roboto> robotos)
+		public virtual void Execute()
 		{
 			if (Program != null)
 			{
-				Program.Execute(robotos);
+				Program.Execute();
 			}
 		}
 	}

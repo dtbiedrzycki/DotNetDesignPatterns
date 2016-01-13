@@ -5,7 +5,7 @@ using DesignPatterns.Behavioral.Observer.Implementations;
 using DesignPatterns.Implementations;
 using DesignPatterns.Utilities;
 
-namespace DesignPatternConsole.Structural.Programs
+namespace DesignPatternConsole.Behavioral
 {
 	public class ObserverProgram : IRobotoProgram
 	{
@@ -18,7 +18,7 @@ namespace DesignPatternConsole.Structural.Programs
 			_reader = reader;
 		}
 
-		public void Execute(IEnumerable<Roboto> robotos)
+		public void Execute()
 		{
 			IMessageSubject subject = new MessageSubject();
 			IMessageObserver observer = new RepeaterMessageObserver(subject);

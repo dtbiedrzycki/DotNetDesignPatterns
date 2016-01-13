@@ -49,24 +49,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Creational\IBuilderGetRobotMethod.cs" />
-    <Compile Include="Creational\Implementations\BuilderGetRobotoMethod.cs" />
-    <Compile Include="Creational\Implementations\FactoryGetRobotoMethod.cs" />
-    <Compile Include="Creational\IFactoryGetRobotoMethod.cs" />
-    <Compile Include="Creational\Implementations\PrototypeGetRobotoMethod.cs" />
-    <Compile Include="Creational\IPrototypeGetRobotoMethod.cs" />
-    <Compile Include="Creational\ISingletonGetRobotoMethod.cs" />
-    <Compile Include="Creational\Implementations\SingletonGetRobotoMethod.cs" />
+    <Compile Include="Creational\RobotoBuilderProgram.cs" />
+    <Compile Include="Creational\RobotoFactoryProgram.cs" />
+    <Compile Include="Creational\RobotoPrototypeProgram.cs" />
+    <Compile Include="Creational\SingletonRobotoProgram.cs" />
     <Compile Include="IGetRobotoMethod.cs" />
     <Compile Include="IoC\WindsorInstaller.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Structural\Programs\ChainOfResponsibilityProgram.cs" />
-    <Compile Include="Structural\Programs\CommandProgram.cs" />
-    <Compile Include="Structural\Programs\DecoratorProgram.cs" />
-    <Compile Include="Structural\ProgramFacade.cs" />
-    <Compile Include="Structural\Programs\ObserverProgram.cs" />
-    <Compile Include="Structural\Programs\RepositoryProgram.cs" />
+    <Compile Include="Structural\ChainOfResponsibilityProgram.cs" />
+    <Compile Include="Behavioral\CommandProgram.cs" />
+    <Compile Include="Structural\DecoratorProgram.cs" />
+    <Compile Include="ProgramFacade.cs" />
+    <Compile Include="Behavioral\ObserverProgram.cs" />
+    <Compile Include="Structural\RepositoryProgram.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

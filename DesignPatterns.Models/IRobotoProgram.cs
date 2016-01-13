@@ -5,6 +5,6 @@ namespace DesignPatterns
 {
 	public interface IRobotoProgram
 	{
-		void Execute(IEnumerable<Roboto> robotos);
+		void Execute();
 	}
 }

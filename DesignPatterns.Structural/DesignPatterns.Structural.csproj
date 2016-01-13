@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="Adaptor\IThirdPartyMobilitySystem.cs" />
     <Compile Include="Adaptor\ThirdPartyArmAdaptor.cs" />
-    <Compile Include="Decorator\Implementations\GetStatusDecorator.cs" />
     <Compile Include="Decorator\IProgramDecorator.cs" />
     <Compile Include="Decorator\Implementations\DecoratorBase.cs" />
     <Compile Include="Decorator\Implementations\QuitDecorator.cs" />

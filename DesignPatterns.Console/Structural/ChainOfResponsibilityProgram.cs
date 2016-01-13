@@ -8,7 +8,7 @@ using DesignPatterns.Behavioral.ChainOfResponsibility.Factory;
 using DesignPatterns.Implementations;
 using DesignPatterns.Utilities;
 
-namespace DesignPatternConsole.Structural.Programs
+namespace DesignPatternConsole.Structural
 {
 	public class ChainOfResponsibilityProgram : IRobotoProgram
 	{
@@ -23,7 +23,7 @@ namespace DesignPatternConsole.Structural.Programs
 			_reader = reader;
 		}
 
-		public void Execute(IEnumerable<Roboto> robotos)
+		public void Execute()
 		{
 			_writer.WriteLine("=== Running the Chain of Responsibility Program ===");
 			_writer.WriteLine("Please enter your message:");
