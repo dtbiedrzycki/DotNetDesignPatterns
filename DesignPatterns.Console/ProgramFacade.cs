@@ -1,7 +1,6 @@
 ﻿using System;
-using DesignPatternConsole.Creational;
+using Castle.Windsor;
 using DesignPatterns;
-using DesignPatterns.Implementations;
 using DesignPatterns.Structural.Facade;
 using DesignPatterns.Utilities;
 
@@ -11,73 +10,53 @@ namespace DesignPatternConsole
 	{
 		private readonly IWriter _writer;
 		private readonly IReader _reader;
-		private readonly IRobotoProgram _decoratorProgram;
-		private readonly IRobotoProgram _repositoryProgram;
-		private readonly IRobotoProgram _chainOfResponsibilityProgram;
-		private readonly IRobotoProgram _commandProgram;
-		private readonly IRobotoProgram _observerProgram;
+		private readonly IRobotoProgramFactory _robotoProgramFactory;
 
-		public ProgramFacade(
-			IWriter writer,
-			IReader reader,
-			IRobotoProgram decoratorProgram,
-			IRobotoProgram repositoryProgram,
-			IRobotoProgram chainOfResponsibilityProgram,
-			IRobotoProgram commandProgram,
-			IRobotoProgram observerProgram)
+		public ProgramFacade(IWriter writer, IReader reader, IRobotoProgramFactory robotoProgramFactory)
 		{
 			_writer = writer;
 			_reader = reader;
-			_decoratorProgram = decoratorProgram;
-			_repositoryProgram = repositoryProgram;
-			_chainOfResponsibilityProgram = chainOfResponsibilityProgram;
-			_commandProgram = commandProgram;
-			_observerProgram = observerProgram;
+			_robotoProgramFactory = robotoProgramFactory;
 		}
-
 
 		public void Execute()
 		{
 			// Get user input for creation method
 			_writer.WriteLine("===== WELCOME TO ROBOTO-CON 2000! =====");
 
+			Type[] programs = _robotoProgramFactory.GetAvailableRobotoPrograms();
+
 			// Get user input for program selection
 			_writer.WriteLine("Please select a program to run");
-			_writer.WriteLine("1: DecoratorGetStatus\t2: Repository\t3: ChainOfResponsibility\n\t4: Command\t5: Observer");
-
-			string input = _reader.ReadLine();
-			int choice = Convert.ToInt32(input);
-
-			IRobotoProgram robotoProgram;
-
-			switch (choice)
+			for (int i = 0; i < programs.Length; i++)
 			{
-				case 1:
-					robotoProgram = _decoratorProgram;
-					break;
+				_writer.WriteLine(String.Format("{0} - {1}", i, programs[i].Name));
+			}
+			_writer.WriteLine("=======================================");
 
-				case 2:
-					robotoProgram = _repositoryProgram;
-					break;
+			Type selectedProgramType = null;
+			try
+			{
+				string input = _reader.ReadLine();
 
-				case 3:
-					robotoProgram = _chainOfResponsibilityProgram;
-					break;
-
-				case 4:
-					robotoProgram = _commandProgram;
-					break;
-
-				case 5:
-					robotoProgram = _observerProgram;
-					break;
-
-				default:
-					_writer.WriteLine("Invalid input...game over");
-					return;
+				int choice = Convert.ToInt32(input);
+				selectedProgramType = programs[choice];
+			}
+			catch
+			{
+				_writer.WriteLine("Invalid input...good day!");
+				_reader.ReadLine();
+				return;
 			}
 
+			// Execute selected program
+			_writer.WriteLine(String.Format("=== Executing {0} ... ===", selectedProgramType.Name));
+			IRobotoProgram robotoProgram = _robotoProgramFactory.GetRobotoProgram(selectedProgramType);
 			robotoProgram.Execute();
+
+			// Show final output
+			_writer.WriteLine("=== Execution Complete...Press any key to exit===");
+			_reader.ReadLine();
 		}
 	}
 }

@@ -3,9 +3,7 @@ using BuilderPatterns.AbstractFactory.Implementations;
 using BuilderPatterns.Builder;
 using BuilderPatterns.Builder.Implementations;
 using Castle.MicroKernel.Registration;
-using DesignPatternConsole.Behavioral;
-using DesignPatternConsole.Structural;
-using DesignPatterns;
+using Castle.Windsor;
 using DesignPatterns.Behavioral.ChainOfResponsibility.Factory;
 using DesignPatterns.Behavioral.ChainOfResponsibility.Factory.Implementation;
 using DesignPatterns.Behavioral.Command;
@@ -22,6 +20,17 @@ namespace DesignPatternConsole.IoC
 	{
 		public void Install(Castle.Windsor.IWindsorContainer container, Castle.MicroKernel.SubSystems.Configuration.IConfigurationStore store)
 		{
+			container.Register(
+				Component.For<IWindsorContainer>().Instance(container)
+					.Named("windsorContainer"));
+
+			// This allows us to specify which implementation by the parameter name
+			container.Register(
+				Component.For<IRobotoProgramFactory>().ImplementedBy<RobotoProgramFactory>().LifestyleTransient()
+					.DependsOn(Dependency.OnComponent("windsorContainer", "windsorContainer")));
+
+			container.Register(Component.For<IProgramFacade>().ImplementedBy<ProgramFacade>().LifestyleTransient());
+
 			// Creational
 			container.Register(Component.For<IRobotoFactory>().ImplementedBy<RobotoFactory>().LifestyleTransient());
 			container.Register(Component.For<IRobotoBuilder>().ImplementedBy<RobotoBuilder>().LifestyleTransient());
@@ -36,41 +45,6 @@ namespace DesignPatternConsole.IoC
 			container.Register(Component.For<IMessageHandlerFactory>().ImplementedBy<MessageHandlerFactory>().LifestyleTransient());
 			container.Register(Component.For<IInvoker>().ImplementedBy<SentenceMakerInvoker>().LifestyleTransient());
 			container.Register(Component.For<IReceiver>().ImplementedBy<SentenceMakerReceiver>().LifestyleTransient());
-
-			// Programs
-			container.Register(
-				Component.For<IRobotoProgram>().ImplementedBy<DecoratorProgram>()
-					.LifestyleTransient()
-					.Named("decoratorProgram"));
-
-			container.Register(
-				Component.For<IRobotoProgram>().ImplementedBy<ChainOfResponsibilityProgram>()
-					.LifestyleTransient()
-					.Named("chainOfResponsibilityProgram"));
-
-			container.Register(
-				Component.For<IRobotoProgram>().ImplementedBy<RepositoryProgram>()
-					.LifestyleTransient()
-					.Named("repositoryProgram"));
-
-			container.Register(
-				Component.For<IRobotoProgram>().ImplementedBy<CommandProgram>()
-					.LifestyleTransient()
-					.Named("commandProgram"));
-
-			container.Register(
-				Component.For<IRobotoProgram>().ImplementedBy<ObserverProgram>()
-					.LifestyleTransient()
-					.Named("observerProgram"));
-
-			// This allows us to specify which implementation by the parameter name
-			container.Register(
-				Component.For<IProgramFacade>().ImplementedBy<ProgramFacade>().LifestyleTransient()
-				.DependsOn(Dependency.OnComponent("decoratorProgram", "decoratorProgram"))
-				.DependsOn(Dependency.OnComponent("chainOfResponsibilityProgram", "chainOfResponsibilityProgram"))
-				.DependsOn(Dependency.OnComponent("commandProgram", "commandProgram"))
-				.DependsOn(Dependency.OnComponent("observerProgram", "observerProgram"))
-				.DependsOn(Dependency.OnComponent("repositoryProgram", "repositoryProgram")));
 		}
 	}
 }

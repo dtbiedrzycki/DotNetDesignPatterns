@@ -53,10 +53,11 @@
     <Compile Include="Creational\RobotoFactoryProgram.cs" />
     <Compile Include="Creational\RobotoPrototypeProgram.cs" />
     <Compile Include="Creational\SingletonRobotoProgram.cs" />
-    <Compile Include="IGetRobotoMethod.cs" />
+    <Compile Include="IRobotoProgramFactory.cs" />
     <Compile Include="IoC\WindsorInstaller.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RobotoProgramFactory.cs" />
     <Compile Include="Structural\ChainOfResponsibilityProgram.cs" />
     <Compile Include="Behavioral\CommandProgram.cs" />
     <Compile Include="Structural\DecoratorProgram.cs" />
