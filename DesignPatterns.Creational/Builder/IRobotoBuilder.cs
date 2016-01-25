@@ -3,7 +3,8 @@
 namespace BuilderPatterns.Builder
 {
 	/// <summary>
-	/// A creational pattern that separates the object construction from its representation
+	/// A creational pattern that separates the object construction from its representation.
+	/// Allows a user to user the same construction process to create different representations.
 	/// </summary>
 	public interface IRobotoBuilder
 	{

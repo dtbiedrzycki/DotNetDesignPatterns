@@ -11,10 +11,7 @@
 
 		public virtual void Execute()
 		{
-			if (Program != null)
-			{
-				Program.Execute();
-			}
+			Program?.Execute();
 		}
 	}
 }

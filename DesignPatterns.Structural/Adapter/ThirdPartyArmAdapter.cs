@@ -1,15 +1,15 @@
 ﻿using System.Threading;
 
-namespace DesignPatterns.Structural.Adaptor
+namespace DesignPatterns.Structural.Adapter
 {
 	/// <summary>
-	/// A structural pattern that matches interfaces of different classes
+	/// A structural pattern that adapts or wraps classes to match a specific interface
 	/// </summary>
-	public class ThirdPartyArmAdaptor : IMobilitySystem
+	public class ThirdPartyArmAdapter : IMobilitySystem
 	{
 		private readonly IThirdPartyMobilitySystem _thirdPartyMobilitySystem;
 		
-		public ThirdPartyArmAdaptor(IThirdPartyMobilitySystem thirdPartyMobilitySystem)
+		public ThirdPartyArmAdapter(IThirdPartyMobilitySystem thirdPartyMobilitySystem)
 		{
 			_thirdPartyMobilitySystem = thirdPartyMobilitySystem;
 		}

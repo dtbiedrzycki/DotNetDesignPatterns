@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adaptor\IThirdPartyMobilitySystem.cs" />
-    <Compile Include="Adaptor\ThirdPartyArmAdaptor.cs" />
+    <Compile Include="Adapter\IThirdPartyMobilitySystem.cs" />
+    <Compile Include="Adapter\ThirdPartyArmAdapter.cs" />
     <Compile Include="Decorator\IProgramDecorator.cs" />
     <Compile Include="Decorator\Implementations\DecoratorBase.cs" />
     <Compile Include="Decorator\Implementations\QuitDecorator.cs" />

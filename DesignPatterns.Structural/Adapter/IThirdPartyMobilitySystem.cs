@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DesignPatterns.Structural.Adaptor
+namespace DesignPatterns.Structural.Adapter
 {
 	public interface IThirdPartyMobilitySystem
 	{

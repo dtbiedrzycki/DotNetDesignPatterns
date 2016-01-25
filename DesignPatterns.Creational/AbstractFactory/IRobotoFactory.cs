@@ -3,7 +3,8 @@
 namespace BuilderPatterns.AbstractFactory
 {
 	/// <summary>
-	/// A creation pattern that creates instances of other classes
+	/// A creation pattern that creates families of related objects without
+	/// requiring the user to know the concrete classes
 	/// </summary>
 	public interface IRobotoFactory
 	{
