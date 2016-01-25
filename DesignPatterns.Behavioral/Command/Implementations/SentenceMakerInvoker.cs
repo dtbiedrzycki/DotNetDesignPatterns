@@ -27,10 +27,7 @@ namespace DesignPatterns.Behavioral.Command.Implementations
 			if (_commands.Any())
 			{
 				ICommand previousCommand = _commands.Pop();
-				if (previousCommand != null)
-				{
-					previousCommand.UnExecute();
-				}
+				previousCommand?.UnExecute();
 			}
 		}
 	}

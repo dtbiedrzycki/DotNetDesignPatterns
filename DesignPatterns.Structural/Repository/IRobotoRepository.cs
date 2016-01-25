@@ -12,5 +12,6 @@ namespace DesignPatterns.Structural.Repository
 		void Create(Roboto roboto);
 		Roboto Retrieve(Guid id);
 		IEnumerable<Roboto> RetrieveAll();
+		void DeleteAll();
 	}
 }

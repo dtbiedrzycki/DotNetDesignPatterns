@@ -17,13 +17,19 @@ namespace DesignPatterns.Structural.Repository.Implementation
 
 		public void Create(Roboto roboto)
 		{
-			//string serializedRoboto = JsonConvert.SerializeObject(roboto);
 			string serializedRoboto = JsonConvert.SerializeObject(new { id = roboto.Id, name = roboto.Name });
 			using (System.IO.StreamWriter file = new StreamWriter(this.GetFilePath(), true))
 			{
 				file.WriteLine(serializedRoboto);
 			}
 		}
+		public void DeleteAll()
+		{
+			using (File.Create(this.GetFilePath()))
+			{
+			}
+		}
+
 
 		public Roboto Retrieve(System.Guid id)
 		{
