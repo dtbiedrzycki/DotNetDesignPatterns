@@ -1,6 +1,4 @@
-﻿using DesignPatterns.Implementations;
-
-namespace DesignPatterns.Structural.Decorator.Implementations
+﻿namespace DesignPatterns.Structural.Decorator.Implementations
 {
 	public abstract class DecoratorBase : IProgramDecorator
 	{

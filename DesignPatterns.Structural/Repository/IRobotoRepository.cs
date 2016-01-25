@@ -1,6 +1,6 @@
-﻿using System;
+﻿using DesignPatterns.Implementations;
+using System;
 using System.Collections.Generic;
-using DesignPatterns.Implementations;
 
 namespace DesignPatterns.Structural.Repository
 {

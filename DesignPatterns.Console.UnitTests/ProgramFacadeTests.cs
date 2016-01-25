@@ -1,10 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Castle.MicroKernel.Registration;
+﻿using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using DesignPatternConsole;
-using DesignPatternConsole.Creational;
-using DesignPatternConsole.Structural;
 using DesignPatterns.Implementations;
 using DesignPatterns.Structural.Facade;
 using DesignPatterns.Utilities;

@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using DesignPatterns;
+﻿using DesignPatterns;
 using DesignPatterns.Implementations;
+using System;
+using System.Collections.Generic;
 
 namespace BuilderPatterns.Builder.Implementations
 {

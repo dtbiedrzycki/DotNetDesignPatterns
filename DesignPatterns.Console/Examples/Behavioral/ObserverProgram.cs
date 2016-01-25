@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-using DesignPatterns;
+﻿using DesignPatterns;
 using DesignPatterns.Behavioral.Observer;
 using DesignPatterns.Behavioral.Observer.Implementations;
-using DesignPatterns.Implementations;
 using DesignPatterns.Utilities;
 
-namespace DesignPatternConsole.Behavioral
+namespace DesignPatternConsole.Examples.Behavioral
 {
 	public class ObserverProgram : IRobotoProgram
 	{
@@ -21,17 +19,22 @@ namespace DesignPatternConsole.Behavioral
 		public void Execute()
 		{
 			IMessageSubject subject = new MessageSubject();
-			IMessageObserver observer = new RepeaterMessageObserver(subject);
-
-			subject.Attach(observer);
+			this.SetUpObservers(subject);
 
 			subject.State = "Hello world!";
-
-			subject.Notify();
-			subject.Notify();
 			subject.Notify();
 
-			_reader.ReadLine();
+			subject.State = "Just getting the message accross...";
+			subject.Notify();
+		}
+
+		private void SetUpObservers(IMessageSubject subject)
+		{
+			IMessageObserver repeaterMessageObserver = new RepeaterMessageObserver(subject, _writer);
+			IMessageObserver reverseRepeaterMessageObserver = new ReverseRepeaterMessageObserver(subject, _writer);
+
+			subject.Attach(repeaterMessageObserver);
+			subject.Attach(reverseRepeaterMessageObserver);
 		}
 	}
 }

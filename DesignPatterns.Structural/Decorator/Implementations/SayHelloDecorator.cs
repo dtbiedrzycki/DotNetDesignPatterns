@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using DesignPatterns.Implementations;
-using DesignPatterns.Utilities;
+﻿using DesignPatterns.Utilities;
 
 namespace DesignPatterns.Structural.Decorator.Implementations
 {

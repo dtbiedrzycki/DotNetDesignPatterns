@@ -1,9 +1,9 @@
-﻿using System;
+﻿using DesignPatterns.Implementations;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using DesignPatterns.Implementations;
-using Newtonsoft.Json;
 
 namespace DesignPatterns.Structural.Repository.Implementation
 {

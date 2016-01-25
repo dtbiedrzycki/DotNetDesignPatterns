@@ -3,7 +3,7 @@ using DesignPatterns.Structural.Decorator;
 using DesignPatterns.Structural.Decorator.Implementations;
 using DesignPatterns.Utilities;
 
-namespace DesignPatternConsole.Structural
+namespace DesignPatternConsole.Examples.Structural
 {
 	public class DecoratorProgram : IRobotoProgram
 	{

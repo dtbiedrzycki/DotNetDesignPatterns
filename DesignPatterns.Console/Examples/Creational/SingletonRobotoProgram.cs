@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BuilderPatterns.Singleton;
+﻿using BuilderPatterns.Singleton;
 using DesignPatterns;
 using DesignPatterns.Implementations;
 using DesignPatterns.Utilities;
 
-namespace DesignPatternConsole.Creational
+namespace DesignPatternConsole.Examples.Creational
 {
 	public class SingletonRobotoProgram: IRobotoProgram
 	{

@@ -1,6 +1,5 @@
-﻿using System;
-using Castle.Windsor;
-using DesignPatterns;
+﻿using DesignPatterns;
+using System;
 
 namespace DesignPatternConsole
 {

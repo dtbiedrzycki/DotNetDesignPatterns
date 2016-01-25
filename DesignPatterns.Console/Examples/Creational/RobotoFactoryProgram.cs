@@ -1,10 +1,10 @@
-﻿using System;
-using BuilderPatterns.AbstractFactory;
+﻿using BuilderPatterns.AbstractFactory;
 using DesignPatterns;
 using DesignPatterns.Implementations;
 using DesignPatterns.Utilities;
+using System;
 
-namespace DesignPatternConsole.Creational
+namespace DesignPatternConsole.Examples.Creational
 {
 	public class RobotoFactoryProgram : IRobotoProgram
 	{

@@ -59,6 +59,7 @@
     <Compile Include="Observer\IMessageSubject.cs" />
     <Compile Include="Observer\Implementations\MessageSubject.cs" />
     <Compile Include="Observer\Implementations\MessageObserverBase.cs" />
+    <Compile Include="Observer\Implementations\ReverseRepeaterMessageObserver.cs" />
     <Compile Include="Observer\Implementations\RepeaterMessageObserver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

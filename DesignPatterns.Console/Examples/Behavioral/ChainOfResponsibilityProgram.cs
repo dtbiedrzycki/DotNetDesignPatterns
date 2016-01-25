@@ -5,10 +5,9 @@ using Castle.Core.Internal;
 using DesignPatterns;
 using DesignPatterns.Behavioral.ChainOfResponsibility;
 using DesignPatterns.Behavioral.ChainOfResponsibility.Factory;
-using DesignPatterns.Implementations;
 using DesignPatterns.Utilities;
 
-namespace DesignPatternConsole.Structural
+namespace DesignPatternConsole.Examples.Behavioral
 {
 	public class ChainOfResponsibilityProgram : IRobotoProgram
 	{

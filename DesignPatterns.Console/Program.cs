@@ -1,9 +1,5 @@
-﻿using System;
-using Castle.Windsor;
-using DesignPatternConsole.Creational;
+﻿using Castle.Windsor;
 using DesignPatternConsole.IoC;
-using DesignPatterns;
-using DesignPatterns.Implementations;
 using DesignPatterns.Structural.Facade;
 namespace DesignPatternConsole
 {

@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using DesignPatterns.Implementations;
-
-namespace DesignPatterns
+﻿namespace DesignPatterns
 {
 	public interface IRobotoProgram
 	{

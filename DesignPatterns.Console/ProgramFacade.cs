@@ -1,8 +1,7 @@
-﻿using System;
-using Castle.Windsor;
-using DesignPatterns;
+﻿using DesignPatterns;
 using DesignPatterns.Structural.Facade;
 using DesignPatterns.Utilities;
+using System;
 
 namespace DesignPatternConsole
 {

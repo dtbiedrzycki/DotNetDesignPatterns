@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using BuilderPatterns.AbstractFactory;
+﻿using BuilderPatterns.AbstractFactory;
 using Castle.Core.Internal;
 using DesignPatterns;
 using DesignPatterns.Implementations;
 using DesignPatterns.Structural.Repository;
 using DesignPatterns.Utilities;
+using System;
+using System.Collections.Generic;
 
-namespace DesignPatternConsole.Structural
+namespace DesignPatternConsole.Examples.Structural
 {
 	public class RepositoryProgram : IRobotoProgram
 	{

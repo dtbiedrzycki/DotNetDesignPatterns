@@ -1,9 +1,9 @@
-﻿using System;
-using System.Linq;
-using Castle.MicroKernel.Registration;
+﻿using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using DesignPatterns;
 using DesignPatterns.Structural.Decorator;
+using System;
+using System.Linq;
 
 namespace DesignPatternConsole
 {

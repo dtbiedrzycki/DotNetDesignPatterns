@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using DesignPatterns;
+﻿using DesignPatterns;
 using DesignPatterns.Behavioral.Command;
 using DesignPatterns.Behavioral.Command.Implementations;
-using DesignPatterns.Implementations;
 using DesignPatterns.Utilities;
+using System;
 
-namespace DesignPatternConsole.Behavioral
+namespace DesignPatternConsole.Examples.Behavioral
 {
 	public class CommandProgram : IRobotoProgram
 	{
@@ -66,7 +64,7 @@ namespace DesignPatternConsole.Behavioral
 					case removeSpecialCharacters:
 						_invoker.Do(SentenceMakerCommand.SentenceCommandName.RemoveSpecialCharacters, null);
 						break;
-                    default:
+					default:
 						break;
 				}
 			}
