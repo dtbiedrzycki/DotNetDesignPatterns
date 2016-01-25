@@ -23,6 +23,14 @@ namespace DesignPatternConsole
 			// Get user input for creation method
 			_writer.WriteLine("===== WELCOME TO ROBOTO-CON 2000! =====");
 
+			while (RunProgram())
+			{
+				// REPL loop
+			}
+		}
+
+		private bool RunProgram()
+		{
 			Type[] programs = _robotoProgramFactory.GetAvailableRobotoPrograms();
 
 			// Get user input for program selection
@@ -31,12 +39,18 @@ namespace DesignPatternConsole
 			{
 				_writer.WriteLine(String.Format("{0} - {1}", i, programs[i].Name));
 			}
+			_writer.WriteLine("q - quit");
 			_writer.WriteLine("=======================================");
 
 			Type selectedProgramType = null;
 			try
 			{
 				string input = _reader.ReadLine();
+
+				if (input == "q")
+				{
+					return false;
+				}
 
 				int choice = Convert.ToInt32(input);
 				selectedProgramType = programs[choice];
@@ -45,7 +59,7 @@ namespace DesignPatternConsole
 			{
 				_writer.WriteLine("Invalid input...good day!");
 				_reader.ReadLine();
-				return;
+				return false;
 			}
 
 			// Execute selected program
@@ -54,8 +68,10 @@ namespace DesignPatternConsole
 			robotoProgram.Execute();
 
 			// Show final output
-			_writer.WriteLine("=== Execution Complete...Press any key to exit===");
+			_writer.WriteLine("=== Execution Complete...Press any key to continue===");
 			_reader.ReadLine();
+
+			return true;
 		}
 	}
 }

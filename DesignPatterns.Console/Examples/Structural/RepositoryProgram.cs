@@ -27,17 +27,12 @@ namespace DesignPatternConsole.Examples.Structural
 		public void Execute()
 		{
 			_writer.WriteLine("=== Running the Repository Program ===");
-			Roboto[] robotos = new[]
-			{
-				_robotoFactory.CreateHumanoidRoboto(),
-				_robotoFactory.CreateRollingRoboto()
-			};
 
 			string input = "";
 			const string quitCommand = "q";
 			const string listCommand = "l";
+			const string deleteCommand = "d";
 			const string saveCommand = "s";
-			bool savedRoboto = false;
 
 			while (input != quitCommand)
 			{
@@ -47,10 +42,19 @@ namespace DesignPatternConsole.Examples.Structural
 						IEnumerable<Roboto> robotosInDatabase = _robotoRepository.RetrieveAll();
 						robotosInDatabase.ForEach(x => _writer.WriteLine(String.Format("ID: {0} ::: Name: {1}", x.Id, x.Name)));
 						break;
+
+					case deleteCommand:
+						_robotoRepository.DeleteAll();
+						break;
+
 					case saveCommand:
+						Roboto[] robotos = new[]
+						{
+							_robotoFactory.CreateHumanoidRoboto(),
+							_robotoFactory.CreateRollingRoboto()
+						};
 						robotos.ForEach(x => _robotoRepository.Create(x));
-						savedRoboto = true;
-						_writer.WriteLine("Roboto saved!");
+						_writer.WriteLine("Robotos saved!");
 						break;
 
 					default:
@@ -60,17 +64,11 @@ namespace DesignPatternConsole.Examples.Structural
 				_writer.WriteLine("=== Choose a command ===");
 				_writer.WriteLine(quitCommand + " -> quit");
 				_writer.WriteLine(listCommand + " -> list all robotos");
-
-				if (!savedRoboto)
-				{
-					_writer.WriteLine("save -> save the current roboto");
-				}
+				_writer.WriteLine(deleteCommand + " -> delete all robotos");
+				_writer.WriteLine("s -> save new robotos");
 
 				input = _reader.ReadLine();
 			}
-
-			_writer.WriteLine("Good bye! Press any key to close.");
-			_reader.ReadLine();
 		}
 	}
 }
