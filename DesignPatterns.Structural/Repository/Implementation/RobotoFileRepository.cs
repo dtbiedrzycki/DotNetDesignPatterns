@@ -30,7 +30,6 @@ namespace DesignPatterns.Structural.Repository.Implementation
 			}
 		}
 
-
 		public Roboto Retrieve(System.Guid id)
 		{
 			IEnumerable<Roboto> robotos = this.RetrieveAll();

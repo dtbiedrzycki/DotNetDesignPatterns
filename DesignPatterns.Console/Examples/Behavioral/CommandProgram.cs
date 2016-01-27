@@ -32,7 +32,7 @@ namespace DesignPatternConsole.Examples.Behavioral
 
 			while (input != quitCommand)
 			{
-				_writer.WriteLine("=== Please Select onf or the following commands ===");
+				_writer.WriteLine("=== Please Select one or the following commands ===");
 				_writer.WriteLine(quitCommand + " -> quit");
 				_writer.WriteLine(addCommand + " [sentence/words/characters to add] -> add to sentence");
 				_writer.WriteLine(encryptCommand + " -> encrypt sentence");
@@ -68,10 +68,6 @@ namespace DesignPatternConsole.Examples.Behavioral
 						break;
 				}
 			}
-
-			_writer.WriteLine(Environment.NewLine + "=== Program Completed ===");
-			_writer.WriteLine("Press any key to quit");
-			_reader.ReadLine();
 		}
 	}
 }

@@ -8,12 +8,10 @@ namespace DesignPatternConsole.Examples.Behavioral
 	public class ObserverProgram : IRobotoProgram
 	{
 		private readonly IWriter _writer;
-		private readonly IReader _reader;
 
-		public ObserverProgram(IWriter writer, IReader reader)
+		public ObserverProgram(IWriter writer)
 		{
 			_writer = writer;
-			_reader = reader;
 		}
 
 		public void Execute()

@@ -33,7 +33,9 @@ namespace DesignPatternConsole
 			string name = typeToResolve.AssemblyQualifiedName;
 			if (!_windsorContainer.Kernel.HasComponent(name))
 			{
-				_windsorContainer.Register(Component.For<IRobotoProgram>().ImplementedBy(typeToResolve).Named(name));
+				_windsorContainer.Register(
+					Component.For<IRobotoProgram>()
+							 .ImplementedBy(typeToResolve).Named(name));
 			}
 
 			IRobotoProgram program = _windsorContainer.Resolve<IRobotoProgram>(name);

@@ -40,7 +40,8 @@ namespace DesignPatternConsole.Examples.Structural
 				{
 					case listCommand:
 						IEnumerable<Roboto> robotosInDatabase = _robotoRepository.RetrieveAll();
-						robotosInDatabase.ForEach(x => _writer.WriteLine(String.Format("ID: {0} ::: Name: {1}", x.Id, x.Name)));
+						robotosInDatabase.ForEach(x => 
+							_writer.WriteLine(String.Format("ID: {0} ::: Name: {1}", x.Id, x.Name)));
 						break;
 
 					case deleteCommand:

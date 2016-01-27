@@ -28,7 +28,7 @@ namespace DesignPatternConsole.Examples.Behavioral
 			_writer.WriteLine("Please enter your message:");
 			string message = _reader.ReadLine();
 			
-			var program = new List<Tuple<string, IMessageHandler>>();
+			var messageHandlers = new List<Tuple<string, IMessageHandler>>();
 			CommandLineCommand[] commands = GetCommands();
 			IDictionary<string, CommandLineCommand> commandLookUp = commands.ToDictionary(x => x.CommandText, x => x);
 
@@ -36,10 +36,10 @@ namespace DesignPatternConsole.Examples.Behavioral
 			bool loop = true;
 			while (loop)
 			{
-				if (program.Any())
+				if (messageHandlers.Any())
 				{
 					_writer.WriteLine(Environment.NewLine + "Current Program:");
-					this.PrintProgram(program.Select(x => x.Item1));
+					this.PrintProgram(messageHandlers.Select(x => x.Item1));
 				}
 
 				_writer.WriteLine(Environment.NewLine + "Please select one of the following commands:");
@@ -57,31 +57,28 @@ namespace DesignPatternConsole.Examples.Behavioral
 					}
 					else
 					{
-						program.Add(new Tuple<string, IMessageHandler>(currentCommand.CommandText, newHandler));
+						messageHandlers.Add(new Tuple<string, IMessageHandler>(currentCommand.CommandText, newHandler));
 					}
 				}
 			}
 
 			// The last handler will always be a message handler
-			program.Add(new Tuple<string, IMessageHandler>("write",_messageHandlerFactory.GetWriteMessageHandler()));
+			messageHandlers.Add(new Tuple<string, IMessageHandler>("write",_messageHandlerFactory.GetWriteMessageHandler()));
 
 			// Set up handlers
-			for (int i = 1; i < program.Count; i++)
+			for (int i = 1; i < messageHandlers.Count; i++)
 			{
-				program[i-1].Item2.SetSuccessor(program[i].Item2);
+				messageHandlers[i-1].Item2.SetSuccessor(messageHandlers[i].Item2);
 			}
 
 			// Execute
 			_writer.WriteLine(Environment.NewLine + "=== Original Input ===");
 			_writer.WriteLine(message);
 			_writer.WriteLine(Environment.NewLine + "=== Final Program ===");
-			this.PrintProgram(program.Select(x => x.Item1));
+			this.PrintProgram(messageHandlers.Select(x => x.Item1));
 			_writer.WriteLine(Environment.NewLine + "=== Final Output ===");
 
-			program[0].Item2.HandleMessage(message);
-
-			_writer.WriteLine(Environment.NewLine + "All done! Press any key to quit.");
-			_reader.ReadLine();
+			messageHandlers[0].Item2.HandleMessage(message);
 		}
 
 		private void PrintProgram(IEnumerable<string> commands)
