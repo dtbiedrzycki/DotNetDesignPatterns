@@ -12,11 +12,11 @@ namespace DesignPatternConsole.Examples.Creational
 		private readonly IWriter _writer;
 		private readonly DateTime _dateTime;
 
-		public RobotoBuilderProgram(IRobotoBuilder robotoBuilder, IWriter writer, DateTime dateTime)
+		public RobotoBuilderProgram(IRobotoBuilder robotoBuilder, IWriter writer)
 		{
 			_robotoBuilder = robotoBuilder;
 			_writer = writer;
-			_dateTime = dateTime;
+			_dateTime = DateTime.Now;
 		}
 
 		public void Execute()
